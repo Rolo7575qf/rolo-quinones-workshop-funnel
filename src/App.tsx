@@ -146,7 +146,7 @@ export default function App() {
               onClick={() => document.getElementById('comprar')?.scrollIntoView({ behavior: 'smooth' })}
               className="px-8 py-3 bg-white text-black rounded-full hover:bg-neon-emerald hover:text-black transition-all font-black text-[9px] uppercase tracking-widest shadow-[0_0_20px_rgba(255,255,255,0.1)]"
             >
-              Inscribirse
+              Registrarme Ahora
             </button>
           </div>
 
@@ -221,30 +221,23 @@ export default function App() {
                 <span className="text-neon-emerald text-[9px] font-black uppercase tracking-[0.5em]">Workshop Online</span>
                 <span className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[8px] font-black uppercase tracking-widest text-white/50">3 Sesiones de 2 horas</span>
               </div>
-              <h1 className="text-7xl md:text-9xl font-display font-bold tracking-tighter leading-[0.9] mb-10">
-                Despierta tu <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/40 italic">Artista.</span>
-                <span className="block text-3xl md:text-5xl mt-8 font-light text-white/80 tracking-tight">
-                  Conoce los secretos de la <br /> Acuarela con Rolo Quiñones
-                </span>
+              <h1 className="text-5xl md:text-[5.5rem] font-display font-bold tracking-tighter leading-[0.95] mb-8">
+                ¿Y si el <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-emerald to-neon-emerald/50 italic">miedo a fallar</span> fuera lo único que te separa de la obra que siempre soñaste pintar?
               </h1>
-              <p className="text-xl md:text-2xl text-slate-400 mb-12 max-w-xl font-light leading-relaxed">
-                Da el primer paso y descubre lo maravilloso de crear disfrutando cada pincelada.
+              <p className="text-xl md:text-2xl text-slate-300 mb-12 max-w-xl font-light leading-relaxed">
+                Da el primer paso en la acuarela y descubre lo maravilloso que es crear disfrutando cada pincelada. Sin frustraciones, sin técnica inalcanzable.
               </p>
               
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-col gap-4 items-start">
                 <button 
                   onClick={() => document.getElementById('comprar')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="px-12 py-6 bg-neon-emerald text-black rounded-full text-xs font-black uppercase tracking-widest shadow-[0_10px_40px_rgba(0,255,157,0.2)] hover:shadow-[0_20px_60px_rgba(0,255,157,0.4)] hover:-translate-y-1 transition-all animate-shine"
+                  className="px-10 md:px-12 py-6 bg-neon-emerald text-black rounded-full text-xs font-black uppercase tracking-widest shadow-[0_10px_40px_rgba(0,255,157,0.2)] hover:shadow-[0_20px_60px_rgba(0,255,157,0.4)] hover:-translate-y-1 transition-all animate-shine"
                 >
-                   Inscribirme ahora — $247
+                  ¡Registrarme ahora y dominar la acuarela! — $247
                 </button>
-                <a 
-                  href="https://wa.me/something" 
-                  className="px-12 py-6 border border-white/10 rounded-full text-xs font-black uppercase tracking-widest hover:bg-white/5 transition-all flex items-center gap-3"
-                >
-                  <MessageCircle className="w-4 h-4 text-neon-emerald" /> Soporte WhatsApp
-                </a>
+                <p className="text-[10px] text-slate-500 uppercase tracking-widest font-black max-w-md italic ml-4">
+                  * No dejes que otro año pase sin haberlo intentado. Transforma tu miedo en arte hoy mismo.
+                </p>
               </div>
             </motion.div>
 
@@ -276,10 +269,63 @@ export default function App() {
           </div>
         </section>
 
+        {/* Story & Video Section (Interés) */}
+        <section className="py-24 relative overflow-hidden bg-black/50 border-y border-white/5">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="order-2 lg:order-1"
+              >
+                <div className="aspect-video w-full rounded-3xl overflow-hidden border border-white/10 relative group shadow-2xl">
+                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all z-10 flex items-center justify-center">
+                    <div className="w-20 h-20 bg-neon-emerald rounded-full flex items-center justify-center cursor-pointer shadow-[0_0_30px_rgba(0,255,157,0.3)] hover:scale-110 transition-transform">
+                      <div className="w-0 h-0 border-t-[12px] border-t-transparent border-l-[20px] border-l-black border-b-[12px] border-b-transparent ml-2"></div>
+                    </div>
+                  </div>
+                  <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=1000&auto=format&fit=crop" alt="Historia de Rolo" className="w-full h-full object-cover" />
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="order-1 lg:order-2"
+              >
+                <SectionTitle subtitle="Mi Historia" accent="emerald">Yo también estuve ahí</SectionTitle>
+                <div className="space-y-6 text-lg text-slate-400 font-light leading-relaxed">
+                  <p>
+                    Seguramente has sentido esas ganas de tomar el pincel, pero algo te detiene. Quizás es el miedo a arruinar el papel blanco, o la frustración de sentir que el agua no te obedece. Yo estuve ahí.
+                  </p>
+                  <p>
+                    Durante años, miraba las obras al óleo de mi abuelo y me preguntaba cómo lograba esa magia. El deseo estaba, pero la decisión de avanzar no llegaba... hasta el 2020. En medio del encierro, comprendí que mis sueños no podían seguir esperando.
+                  </p>
+                  <p>
+                    Decidí transformar mis miedos en mi motor de crecimiento. Me formé con grandes mentores y hoy, como acuarelista, mi misión es que tú no abandones tu sueño de pintar.
+                  </p>
+                </div>
+                <div className="mt-10 p-6 glass-vanguard border-white/5 rounded-2xl relative overflow-hidden">
+                  <div className="absolute top-0 left-0 w-2 h-full bg-neon-emerald"></div>
+                  <p className="italic text-slate-300 font-display text-xl ml-4">"Rolo no solo te enseña a pintar, te enseña a perder el miedo a equivocarte y a disfrutar del agua."</p>
+                  <p className="text-[10px] text-neon-emerald uppercase tracking-widest font-black mt-4 ml-4">— Alumna de Superación Artística</p>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
         {/* Modules Section */}
         <section id="programa" className="py-32 relative overflow-hidden bg-white/[0.02]">
           <div className="max-w-7xl mx-auto px-6">
-            <SectionTitle subtitle="Programa Académico" accent="amber">Módulos del Workshop</SectionTitle>
+            <div className="text-center max-w-4xl mx-auto mb-20">
+              <SectionTitle subtitle="El Programa" accent="amber">Despierta tu Artista: Secretos de la Acuarela con Rolo Quiñones</SectionTitle>
+              <p className="text-xl text-slate-400 font-light leading-relaxed mt-6">
+                Un espacio diseñado para activar tu creatividad a través de un método 100% práctico que podrás aplicar desde el primer día. No solo aprenderás técnica; aprenderás a disfrutar el proceso.
+              </p>
+            </div>
             
             <div className="grid md:grid-cols-3 gap-8">
               {MODULES.map((module, idx) => (
@@ -318,7 +364,7 @@ export default function App() {
               className="mt-16 p-10 rounded-[40px] bg-gradient-to-br from-neon-amber/20 via-transparent to-transparent border border-neon-amber/30 relative overflow-hidden"
             >
               <div className="absolute top-0 right-0 p-8">
-                <span className="text-[10px] font-black uppercase tracking-[0.5em] text-neon-amber px-4 py-2 bg-neon-amber/10 rounded-full">Bonus Exclusivo</span>
+                <span className="text-[10px] font-black uppercase tracking-[0.5em] text-neon-amber px-4 py-2 bg-neon-amber/10 rounded-full">Al inscribirte hoy</span>
               </div>
               <div className="flex flex-col md:flex-row items-center gap-12">
                 <div className="shrink-0 w-24 h-24 bg-neon-amber/20 rounded-3xl flex items-center justify-center">
@@ -328,15 +374,15 @@ export default function App() {
                   <div className="flex items-start gap-4">
                     <div className="mt-1 shrink-0 w-5 h-5 rounded-full border border-neon-amber/30 flex items-center justify-center text-[10px] font-bold text-neon-amber">1</div>
                     <div>
-                      <h4 className="text-xl font-display font-bold mb-1">Los 4 Pilares de la Acuarela</h4>
-                      <p className="text-slate-400 text-xs font-light">Acceso liberado al curso completo por 1 año.</p>
+                      <h4 className="text-xl font-display font-bold mb-1">Garantía de Formación</h4>
+                      <p className="text-slate-400 text-xs font-light">Acceso GRATUITO por 1 año al curso "Los 4 Pilares de la Acuarela" (más de 40 videos con procesos completos).</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <div className="mt-1 shrink-0 w-5 h-5 rounded-full border border-neon-amber/30 flex items-center justify-center text-[10px] font-bold text-neon-amber">2</div>
                     <div>
-                      <h4 className="text-xl font-display font-bold mb-1">Comunidad Exclusiva</h4>
-                      <p className="text-slate-400 text-xs font-light">Acceso directo a la red privada de Rolo Acuarelas.</p>
+                      <h4 className="text-xl font-display font-bold mb-1">Comunidad VIP</h4>
+                      <p className="text-slate-400 text-xs font-light">Acceso a la comunidad exclusiva de Rolo Acuarelas, donde compartimos tips, información y soporte continuo.</p>
                     </div>
                   </div>
                 </div>
@@ -344,17 +390,43 @@ export default function App() {
             </motion.div>
 
             <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mt-12 bg-neon-amber/5 border border-neon-amber/20 rounded-3xl p-8 max-w-3xl mx-auto text-center"
+            >
+              <p className="text-neon-amber font-black uppercase tracking-widest text-[10px] mb-3">Nota de Exclusividad</p>
+              <p className="text-slate-300 font-light text-sm md:text-base">
+                Para garantizar que recibas una atención personalizada y pueda guiar tus pinceladas de cerca, este workshop está limitado a solo <span className="font-bold text-white">15 participantes</span>.
+              </p>
+              
+              <div className="mt-6 flex flex-col items-center">
+                <div className="flex justify-between w-full max-w-xs text-[10px] uppercase font-black tracking-widest text-slate-400 mb-2">
+                  <span>Cupos Ocupados</span>
+                  <span className="text-neon-amber">12 / 15</span>
+                </div>
+                <div className="w-full max-w-xs h-1.5 bg-white/10 rounded-full overflow-hidden">
+                  <div className="h-full bg-neon-amber w-[80%] rounded-full shadow-[0_0_10px_rgba(245,158,11,0.5)]"></div>
+                </div>
+                <p className="text-neon-amber font-black text-xs mt-3 animate-pulse">¡Últimos 3 cupos disponibles!</p>
+              </div>
+            </motion.div>
+
+            <motion.div 
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="mt-24 text-center"
+              className="mt-16 text-center flex flex-col items-center gap-4"
             >
               <button 
                 onClick={() => document.getElementById('comprar')?.scrollIntoView({ behavior: 'smooth' })}
                 className="px-14 py-6 bg-white text-black rounded-full text-xs font-black uppercase tracking-widest hover:bg-neon-amber hover:text-black transition-all animate-shine shadow-2xl"
               >
-                Quiero transformar mi arte hoy — $247
+                ¡Registrarme ahora y dominar la acuarela!
               </button>
+              <p className="text-[10px] text-slate-500 uppercase tracking-widest font-black max-w-md italic">
+                * No dejes que otro año pase sin haberlo intentado. Transforma tu miedo en arte hoy mismo.
+              </p>
             </motion.div>
           </div>
         </section>
@@ -523,8 +595,11 @@ export default function App() {
                     onClick={handlePurchase}
                     className="w-full py-7 bg-white text-black rounded-full text-xs font-black uppercase tracking-widest shadow-[0_20px_60px_rgba(255,255,255,0.1)] hover:bg-neon-emerald hover:-translate-y-1 transition-all group active:scale-95 animate-shine"
                   >
-                    Confirmar Inscripción
+                    ¡Registrarme Ahora y Dominar la Acuarela!
                   </button>
+                  <p className="text-[10px] text-slate-500 uppercase tracking-widest font-black italic -mt-2">
+                    * No dejes que otro año pase sin haberlo intentado. Transforma tu miedo en arte hoy mismo.
+                  </p>
                   <div className="flex items-center justify-center gap-6 text-[9px] font-black uppercase tracking-widest text-slate-600">
                     <div className="flex items-center gap-1.5"><CheckCircle2 className="w-3 h-3 text-neon-emerald" /> Stripe</div>
                     <div className="flex items-center gap-1.5"><CheckCircle2 className="w-3 h-3 text-neon-emerald" /> PayPal</div>
