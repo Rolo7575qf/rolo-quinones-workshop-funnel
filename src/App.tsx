@@ -279,13 +279,16 @@ export default function App() {
                 viewport={{ once: true }}
                 className="order-2 lg:order-1"
               >
-                <div className="aspect-video w-full rounded-3xl overflow-hidden border border-white/10 relative group shadow-2xl">
-                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all z-10 flex items-center justify-center">
-                    <div className="w-20 h-20 bg-neon-emerald rounded-full flex items-center justify-center cursor-pointer shadow-[0_0_30px_rgba(0,255,157,0.3)] hover:scale-110 transition-transform">
-                      <div className="w-0 h-0 border-t-[12px] border-t-transparent border-l-[20px] border-l-black border-b-[12px] border-b-transparent ml-2"></div>
-                    </div>
-                  </div>
-                  <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=1000&auto=format&fit=crop" alt="Historia de Rolo" className="w-full h-full object-cover" />
+                <div className="w-full max-w-sm mx-auto aspect-[9/16] rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(0,255,157,0.1)]">
+                  <iframe 
+                    width="100%" 
+                    height="100%" 
+                    src="https://www.youtube.com/embed/ykAVF2wwZPo" 
+                    title="YouTube video player" 
+                    frameBorder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowFullScreen>
+                  </iframe>
                 </div>
               </motion.div>
 
