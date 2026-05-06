@@ -296,13 +296,30 @@ export default function App() {
                 <SectionTitle subtitle="Mi Historia" accent="emerald">De la frustración a la primera pincelada con sentido</SectionTitle>
                 <div className="space-y-6 text-lg text-slate-400 font-light leading-relaxed">
                   <p>
-                    Seguramente has sentido esas ganas de tomar el pincel, pero algo te detiene. Quizás es el miedo a arruinar el papel blanco, o la frustración de sentir que el agua no te obedece. Yo también sentí que la técnica era un muro insuperable.
+                    Seguramente has sentido esas ganas de tomar el pincel, pero algo te detiene. Quizás es el miedo paralizante a arruinar ese papel en blanco tan caro, o la frustración de ver cómo el agua se desborda sin control, llevándose tus ganas de seguir. Yo estuve ahí: para mí, la acuarela no era un arte, era un muro insuperable.
                   </p>
                   <p>
-                    Durante años, miraba las obras al óleo de mi abuelo y me preguntaba cómo lograba esa magia. Yo también sentí que llegaba tarde y el deseo de crear se asfixiaba bajo mis propias expectativas... hasta el 2020.
+                    Desde niño miraba las obras al óleo de mi abuelo, que era pintor y, aunque sentía el llamado del arte, nunca tomé la decisión de aprender. Hasta que llegó el año 2020 y la pandemia.
                   </p>
                   <p>
-                    Decidí transformar mis miedos en mi motor de crecimiento. Me formé con grandes mentores y hoy mi misión es evitar que pases por esa misma parálisis. Este método es el espejo de mi propio viaje, diseñado para que tú no abandones tu sueño de pintar.
+                    El encierro me obligó a mirar de frente mis sueños postergados. Fue ahí cuando tomé una decisión que lo cambió todo: dejé de pelear con el agua y empecé a entender su lenguaje. Mis hitos de transformación:
+                  </p>
+                  <ul className="space-y-4 pl-4 border-l-2 border-neon-emerald/30 text-base text-slate-300">
+                    <li>
+                      <strong className="text-white">Romper la inercia:</strong> Decidí que mi miedo sería mi motor, no mi freno. Invertí en formación con grandes mentores internacionales, observándolos pintar en vivo y descifrando aquello que los libros no enseñan.
+                    </li>
+                    <li>
+                      <strong className="text-white">El método tras la magia:</strong> Entendí que la acuarela no es azar, sino una danza entre control y libertad. Pasé de manchas accidentales a mi primera pincelada con sentido, esa donde tú decides dónde va la luz y dónde el agua cuenta la historia.
+                    </li>
+                    <li>
+                      <strong className="text-white">De aprendiz a guía:</strong> Logré transformar esa parálisis técnica en un sistema claro y replicable. Mis propios logros como acuarelista hoy no son trofeos personales, sino la prueba de que el talento se construye con el método correcto.
+                    </li>
+                  </ul>
+                  <p>
+                    Hoy, mi misión es evitar que pases por esa misma parálisis que me detuvo a mí durante años. Este workshop no es solo técnica; es el espejo de mi propio viaje, diseñado paso a paso para que tú no abandones tu sueño de pintar.
+                  </p>
+                  <p className="text-xl font-display text-white italic">
+                    No estás tarde. Estás a una pincelada de distancia de despertar a tu artista.
                   </p>
                 </div>
                 <div className="mt-10 p-6 glass-vanguard border-white/5 rounded-2xl relative overflow-hidden">
