@@ -146,7 +146,7 @@ export default function App() {
               onClick={() => window.open('https://pay.hotmart.com/U99377775X?off=zcbvhlbz', '_blank')}
               className="px-8 py-3 bg-white text-black rounded-full hover:bg-neon-emerald hover:text-black transition-all font-black text-[9px] uppercase tracking-widest shadow-[0_0_20px_rgba(255,255,255,0.1)]"
             >
-              Registrarme Ahora
+              ¡Sí, quiero despertar mi artista interior!
             </button>
           </div>
 
@@ -175,7 +175,7 @@ export default function App() {
                 }}
                 className="w-full py-5 bg-neon-emerald text-black rounded-full text-sm font-black uppercase tracking-widest"
               >
-                Inscribirse — $247
+                ¡Sí, quiero despertar mi artista interior! — $247
               </button>
             </div>
           </motion.div>
@@ -222,10 +222,10 @@ export default function App() {
                 <span className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[8px] font-black uppercase tracking-widest text-white/50">3 Sesiones de 2 horas</span>
               </div>
               <h1 className="text-3xl md:text-[4rem] font-display font-bold tracking-tighter leading-[0.95] mb-8">
-                ¿Y si el <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-emerald to-neon-emerald/50 italic">miedo a fallar</span> fuera lo único que te separa de la obra que siempre soñaste pintar?
+                ¿Cuántas veces has guardado tus pinceles por <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-emerald to-neon-emerald/50 italic">miedo a arruinar el papel?</span>
               </h1>
               <p className="text-xl md:text-2xl text-slate-300 mb-12 max-w-xl font-light leading-relaxed">
-                Da el primer paso en la acuarela y descubre lo maravilloso que es crear disfrutando cada pincelada. Sin frustraciones, sin técnica inalcanzable.
+                Es hora de transformar esa frustración en tu mejor obra. Da el primer paso en la acuarela y descubre lo maravilloso que es crear disfrutando cada pincelada.
               </p>
               
               <div className="flex flex-col gap-4 items-start">
@@ -233,7 +233,7 @@ export default function App() {
                   onClick={() => window.open('https://pay.hotmart.com/U99377775X?off=zcbvhlbz', '_blank')}
                   className="px-10 md:px-12 py-6 bg-neon-emerald text-black rounded-full text-xs font-black uppercase tracking-widest shadow-[0_10px_40px_rgba(0,255,157,0.2)] hover:shadow-[0_20px_60px_rgba(0,255,157,0.4)] hover:-translate-y-1 transition-all animate-shine"
                 >
-                  ¡Registrarme ahora y dominar la acuarela! — $247
+                  ¡Sí, quiero despertar mi artista interior! — $247
                 </button>
                 <p className="text-[10px] text-slate-500 uppercase tracking-widest font-black max-w-md italic ml-4">
                   * No dejes que otro año pase sin haberlo intentado. Transforma tu miedo en arte hoy mismo.
@@ -251,19 +251,16 @@ export default function App() {
                 <div className="w-[120%] h-[120%] border border-white/5 rounded-full orbit-item"></div>
                 <div className="w-[100%] h-[100%] border border-white/5 rounded-full absolute" style={{animation:'orbit 30s linear infinite reverse'}}></div>
               </div>
-              <div className="relative z-10 aspect-[4/5] rounded-[60px] overflow-hidden neon-border-emerald group">
-                 <img 
-                  src="https://images.unsplash.com/photo-1543857778-c4a1a3e0b2eb?q=80&w=1000&auto=format&fit=crop" 
-                  alt="Workshop Hero" 
-                  className="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent flex items-bottom p-12">
-                  <div className="mt-auto">
-                    <p className="text-[10px] uppercase font-black tracking-widest text-neon-emerald mb-2">Próxima Edición</p>
-                    <p className="text-3xl font-display font-bold">Mayo 20—22</p>
-                  </div>
-                </div>
+              <div className="relative z-10 w-full max-w-sm mx-auto aspect-[9/16] rounded-[40px] overflow-hidden shadow-[0_0_50px_rgba(0,255,157,0.1)] neon-border-emerald group">
+                  <iframe 
+                    width="100%" 
+                    height="100%" 
+                    src="https://www.youtube.com/embed/ykAVF2wwZPo" 
+                    title="YouTube video player" 
+                    frameBorder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowFullScreen>
+                  </iframe>
               </div>
             </motion.div>
           </div>
@@ -279,16 +276,10 @@ export default function App() {
                 viewport={{ once: true }}
                 className="order-2 lg:order-1"
               >
-                <div className="w-full max-w-sm mx-auto aspect-[9/16] rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(0,255,157,0.1)]">
-                  <iframe 
-                    width="100%" 
-                    height="100%" 
-                    src="https://www.youtube.com/embed/ykAVF2wwZPo" 
-                    title="YouTube video player" 
-                    frameBorder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    allowFullScreen>
-                  </iframe>
+                <div className="aspect-[4/5] w-full max-w-md mx-auto rounded-[40px] overflow-hidden border border-white/10 relative group shadow-2xl">
+                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all z-10 flex items-center justify-center">
+                  </div>
+                  <img src="https://res.cloudinary.com/diqwlgqig/image/upload/v1774398410/Rolo%20_Historia.jpg" alt="Rolo pintando" className="w-full h-full object-cover" />
                 </div>
               </motion.div>
 
@@ -298,16 +289,16 @@ export default function App() {
                 viewport={{ once: true }}
                 className="order-1 lg:order-2"
               >
-                <SectionTitle subtitle="Mi Historia" accent="emerald">Yo también estuve ahí</SectionTitle>
+                <SectionTitle subtitle="Mi Historia" accent="emerald">De la frustración a la primera pincelada con sentido</SectionTitle>
                 <div className="space-y-6 text-lg text-slate-400 font-light leading-relaxed">
                   <p>
-                    Seguramente has sentido esas ganas de tomar el pincel, pero algo te detiene. Quizás es el miedo a arruinar el papel blanco, o la frustración de sentir que el agua no te obedece. Yo estuve ahí.
+                    Seguramente has sentido esas ganas de tomar el pincel, pero algo te detiene. Quizás es el miedo a arruinar el papel blanco, o la frustración de sentir que el agua no te obedece. Yo también sentí que la técnica era un muro insuperable.
                   </p>
                   <p>
-                    Durante años, miraba las obras al óleo de mi abuelo y me preguntaba cómo lograba esa magia. El deseo estaba, pero la decisión de avanzar no llegaba... hasta el 2020. En medio del encierro, comprendí que mis sueños no podían seguir esperando.
+                    Durante años, miraba las obras al óleo de mi abuelo y me preguntaba cómo lograba esa magia. Yo también sentí que llegaba tarde y el deseo de crear se asfixiaba bajo mis propias expectativas... hasta el 2020.
                   </p>
                   <p>
-                    Decidí transformar mis miedos en mi motor de crecimiento. Me formé con grandes mentores y hoy, como acuarelista, mi misión es que tú no abandones tu sueño de pintar.
+                    Decidí transformar mis miedos en mi motor de crecimiento. Me formé con grandes mentores y hoy mi misión es evitar que pases por esa misma parálisis. Este método es el espejo de mi propio viaje, diseñado para que tú no abandones tu sueño de pintar.
                   </p>
                 </div>
                 <div className="mt-10 p-6 glass-vanguard border-white/5 rounded-2xl relative overflow-hidden">
@@ -316,6 +307,37 @@ export default function App() {
                   <p className="text-[10px] text-neon-emerald uppercase tracking-widest font-black mt-4 ml-4">— Alumna de Superación Artística</p>
                 </div>
               </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Qué vas a lograr */}
+        <section className="py-24 relative overflow-hidden bg-black">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="text-center mb-16">
+               <h2 className="text-4xl md:text-5xl font-display font-bold">¿Qué vas a lograr?</h2>
+               <p className="text-slate-400 mt-4 font-light max-w-xl mx-auto">Un método 100% práctico desde el día 1, sin teoría aburrida.</p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-12">
+               <div className="p-10 glass-vanguard rounded-[40px] border border-white/5 shadow-2xl relative overflow-hidden group hover:border-neon-emerald/30 transition-all">
+                 <div className="absolute top-0 right-0 p-8 opacity-20 group-hover:opacity-40 transition-opacity"><Palette className="w-24 h-24 text-neon-emerald" /></div>
+                 <h3 className="text-2xl font-display font-bold mb-6 text-neon-emerald relative z-10">Resultados Tangibles</h3>
+                 <ul className="space-y-4 relative z-10 text-slate-300 font-light">
+                   <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 bg-neon-emerald rounded-full shrink-0 mt-2"></div><span>Dominio práctico de la técnica y soltura en tus trazos.</span></li>
+                   <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 bg-neon-emerald rounded-full shrink-0 mt-2"></div><span>Control absoluto del agua y el pigmento.</span></li>
+                   <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 bg-neon-emerald rounded-full shrink-0 mt-2"></div><span>Creación de paletas y mezclas de color precisas.</span></li>
+                 </ul>
+               </div>
+               
+               <div className="p-10 glass-vanguard rounded-[40px] border border-white/5 shadow-2xl relative overflow-hidden group hover:border-neon-amber/30 transition-all">
+                 <div className="absolute top-0 right-0 p-8 opacity-20 group-hover:opacity-40 transition-opacity"><CheckCircle2 className="w-24 h-24 text-neon-amber" /></div>
+                 <h3 className="text-2xl font-display font-bold mb-6 text-neon-amber relative z-10">Beneficios Intangibles</h3>
+                 <ul className="space-y-4 relative z-10 text-slate-300 font-light">
+                   <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 bg-neon-amber rounded-full shrink-0 mt-2"></div><span>Confianza absoluta frente al temido papel blanco.</span></li>
+                   <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 bg-neon-amber rounded-full shrink-0 mt-2"></div><span>Paz mental y desconexión durante tu proceso creativo.</span></li>
+                   <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 bg-neon-amber rounded-full shrink-0 mt-2"></div><span>El profundo orgullo de poder enmarcar y exhibir tu propia obra.</span></li>
+                 </ul>
+               </div>
             </div>
           </div>
         </section>
@@ -378,14 +400,14 @@ export default function App() {
                     <div className="mt-1 shrink-0 w-5 h-5 rounded-full border border-neon-amber/30 flex items-center justify-center text-[10px] font-bold text-neon-amber">1</div>
                     <div>
                       <h4 className="text-xl font-display font-bold mb-1">Garantía de Formación</h4>
-                      <p className="text-slate-200 text-sm font-normal leading-relaxed">Acceso GRATUITO por 1 año al curso "Los 4 Pilares de la Acuarela" (más de 40 videos con procesos completos).</p>
+                      <p className="text-slate-200 text-sm font-normal leading-relaxed">Acceso GRATUITO por 1 año al curso "Los 4 Pilares de la Acuarela" <span className="text-neon-amber font-bold">(Valorado en $27 USD - GRATIS)</span>.</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <div className="mt-1 shrink-0 w-5 h-5 rounded-full border border-neon-amber/30 flex items-center justify-center text-[10px] font-bold text-neon-amber">2</div>
                     <div>
                       <h4 className="text-xl font-display font-bold mb-1">Comunidad VIP</h4>
-                      <p className="text-slate-200 text-sm font-normal leading-relaxed">Acceso a la comunidad exclusiva de Rolo Acuarelas, donde compartimos tips, información y soporte continuo.</p>
+                      <p className="text-slate-200 text-sm font-normal leading-relaxed">Acceso a la comunidad exclusiva de Rolo Acuarelas <span className="text-neon-amber font-bold">(Valorada en $47 USD - GRATIS)</span>.</p>
                     </div>
                   </div>
                 </div>
@@ -425,7 +447,7 @@ export default function App() {
                 onClick={() => window.open('https://pay.hotmart.com/U99377775X?off=zcbvhlbz', '_blank')}
                 className="px-14 py-6 bg-white text-black rounded-full text-xs font-black uppercase tracking-widest hover:bg-neon-amber hover:text-black transition-all animate-shine shadow-2xl"
               >
-                ¡Registrarme ahora y dominar la acuarela!
+                ¡Sí, quiero despertar mi artista interior!
               </button>
               <p className="text-[10px] text-slate-500 uppercase tracking-widest font-black max-w-md italic">
                 * No dejes que otro año pase sin haberlo intentado. Transforma tu miedo en arte hoy mismo.
@@ -594,11 +616,14 @@ export default function App() {
                 </div>
 
                 <div className="flex flex-col gap-6 max-w-sm mx-auto">
+                  <p className="text-neon-amber font-bold text-sm tracking-wide bg-neon-amber/10 py-2 px-4 rounded-lg">
+                    ⚠️ Atención: Solo quedan 3 cupos disponibles para mantener la experiencia 100% personalizada.
+                  </p>
                   <button 
                     onClick={handlePurchase}
                     className="w-full py-7 bg-white text-black rounded-full text-xs font-black uppercase tracking-widest shadow-[0_20px_60px_rgba(255,255,255,0.1)] hover:bg-neon-emerald hover:-translate-y-1 transition-all group active:scale-95 animate-shine"
                   >
-                    ¡Registrarme Ahora y Dominar la Acuarela!
+                    ¡Sí, quiero despertar mi artista interior!
                   </button>
                   <p className="text-[10px] text-slate-500 uppercase tracking-widest font-black italic -mt-2">
                     * No dejes que otro año pase sin haberlo intentado. Transforma tu miedo en arte hoy mismo.
