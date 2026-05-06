@@ -56,12 +56,14 @@ const SCHEDULE = [
 ];
 
 const GALLERY = [
-  { id: 1, url: "https://images.unsplash.com/photo-1541963463532-d68292c34b19?q=80&w=1000&auto=format&fit=crop", title: "Catedral Europea" },
-  { id: 2, url: "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?q=80&w=1000&auto=format&fit=crop", title: "Abstracción Floral" },
-  { id: 3, url: "https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?q=80&w=1000&auto=format&fit=crop", title: "Puerto al Atardecer" },
-  { id: 4, url: "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?q=80&w=1000&auto=format&fit=crop", title: "Calle de Pueblo" },
-  { id: 5, url: "https://images.unsplash.com/photo-1605721911519-3dfeb3be25e7?q=80&w=1000&auto=format&fit=crop", title: "Paisaje de Montaña" },
-  { id: 6, url: "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?q=80&w=1000&auto=format&fit=crop", title: "Naturaleza Viva" }
+  { id: 1, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1776098579/Bajo_la_luz_de_Paris_1.jpg", title: "Bajo la luz de Paris" },
+  { id: 2, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1776096698/Rouen___Francia.jpg", title: "Rouen Francia" },
+  { id: 3, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1774572770/Acuarela_Cesky.jpg", title: "Acuarela Cesky" },
+  { id: 4, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1774402985/Baja_Marea.jpg", title: "Baja Marea" },
+  { id: 5, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1774402778/IMG_20260310_161727918_AE_1_-_copia.jpg", title: "Obra en Estudio" },
+  { id: 6, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1774399238/Bolsa%20Valparaiso.jpg", title: "Bolsa Valparaíso" },
+  { id: 7, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1774402877/Sierra_India_-_copia.jpg", title: "Sierra India" },
+  { id: 8, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1774572108/Valle_en_Inverno.jpg", title: "Valle en Invierno" }
 ];
 
 // --- Components ---
@@ -101,8 +103,8 @@ const TRAJECTORY = [
 ];
 
 const PAINTING_WORLD = [
-  { id: 1, url: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=1000", location: "Pintando en Venecia" },
-  { id: 2, url: "https://images.unsplash.com/photo-1543857778-c4a1a3e0b2eb?q=80&w=1000", location: "Sketch Urbano en Praga" }
+  { id: 1, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1774398411/1704126221112_qoh9la.jpg", location: "Sketch Urbano" },
+  { id: 2, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1774398410/Rolo%20_Historia.jpg", location: "Taller en Vivo" }
 ];
 
 export default function App() {
@@ -376,14 +378,14 @@ export default function App() {
                     <div className="mt-1 shrink-0 w-5 h-5 rounded-full border border-neon-amber/30 flex items-center justify-center text-[10px] font-bold text-neon-amber">1</div>
                     <div>
                       <h4 className="text-xl font-display font-bold mb-1">Garantía de Formación</h4>
-                      <p className="text-slate-400 text-xs font-light">Acceso GRATUITO por 1 año al curso "Los 4 Pilares de la Acuarela" (más de 40 videos con procesos completos).</p>
+                      <p className="text-slate-200 text-sm font-normal leading-relaxed">Acceso GRATUITO por 1 año al curso "Los 4 Pilares de la Acuarela" (más de 40 videos con procesos completos).</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <div className="mt-1 shrink-0 w-5 h-5 rounded-full border border-neon-amber/30 flex items-center justify-center text-[10px] font-bold text-neon-amber">2</div>
                     <div>
                       <h4 className="text-xl font-display font-bold mb-1">Comunidad VIP</h4>
-                      <p className="text-slate-400 text-xs font-light">Acceso a la comunidad exclusiva de Rolo Acuarelas, donde compartimos tips, información y soporte continuo.</p>
+                      <p className="text-slate-200 text-sm font-normal leading-relaxed">Acceso a la comunidad exclusiva de Rolo Acuarelas, donde compartimos tips, información y soporte continuo.</p>
                     </div>
                   </div>
                 </div>
@@ -544,7 +546,7 @@ export default function App() {
         <section id="galeria" className="py-32">
           <div className="max-w-7xl mx-auto px-6">
             <SectionTitle subtitle="Portafolio" accent="amber">Obras Recientes</SectionTitle>
-            <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {GALLERY.map((img, idx) => (
                 <motion.div
                   key={img.id}
