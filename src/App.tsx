@@ -117,9 +117,7 @@ export default function App() {
   }, []);
 
   const handlePurchase = () => {
-    // Mock purchase flow
-    setHasPurchased(true);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.open('https://pay.hotmart.com/U99377775X?off=zcbvhlbz', '_blank');
   };
 
   return (
@@ -143,7 +141,7 @@ export default function App() {
             <a href="#programa" className="hover:text-neon-emerald transition-colors">Workshop</a>
             <a href="#horarios" className="hover:text-neon-emerald transition-colors">Fechas</a>
             <button 
-              onClick={() => document.getElementById('comprar')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => window.open('https://pay.hotmart.com/U99377775X?off=zcbvhlbz', '_blank')}
               className="px-8 py-3 bg-white text-black rounded-full hover:bg-neon-emerald hover:text-black transition-all font-black text-[9px] uppercase tracking-widest shadow-[0_0_20px_rgba(255,255,255,0.1)]"
             >
               Registrarme Ahora
@@ -171,7 +169,7 @@ export default function App() {
               <button 
                 onClick={() => {
                   setIsMenuOpen(false);
-                  document.getElementById('comprar')?.scrollIntoView({ behavior: 'smooth' });
+                  window.open('https://pay.hotmart.com/U99377775X?off=zcbvhlbz', '_blank');
                 }}
                 className="w-full py-5 bg-neon-emerald text-black rounded-full text-sm font-black uppercase tracking-widest"
               >
@@ -230,7 +228,7 @@ export default function App() {
               
               <div className="flex flex-col gap-4 items-start">
                 <button 
-                  onClick={() => document.getElementById('comprar')?.scrollIntoView({ behavior: 'smooth' })}
+                  onClick={() => window.open('https://pay.hotmart.com/U99377775X?off=zcbvhlbz', '_blank')}
                   className="px-10 md:px-12 py-6 bg-neon-emerald text-black rounded-full text-xs font-black uppercase tracking-widest shadow-[0_10px_40px_rgba(0,255,157,0.2)] hover:shadow-[0_20px_60px_rgba(0,255,157,0.4)] hover:-translate-y-1 transition-all animate-shine"
                 >
                   ¡Registrarme ahora y dominar la acuarela! — $247
@@ -422,7 +420,7 @@ export default function App() {
               className="mt-16 text-center flex flex-col items-center gap-4"
             >
               <button 
-                onClick={() => document.getElementById('comprar')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => window.open('https://pay.hotmart.com/U99377775X?off=zcbvhlbz', '_blank')}
                 className="px-14 py-6 bg-white text-black rounded-full text-xs font-black uppercase tracking-widest hover:bg-neon-amber hover:text-black transition-all animate-shine shadow-2xl"
               >
                 ¡Registrarme ahora y dominar la acuarela!
