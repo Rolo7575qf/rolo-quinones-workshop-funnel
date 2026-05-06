@@ -221,7 +221,7 @@ export default function App() {
                 <span className="text-neon-emerald text-[9px] font-black uppercase tracking-[0.5em]">Workshop Online</span>
                 <span className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[8px] font-black uppercase tracking-widest text-white/50">3 Sesiones de 2 horas</span>
               </div>
-              <h1 className="text-5xl md:text-[5.5rem] font-display font-bold tracking-tighter leading-[0.95] mb-8">
+              <h1 className="text-3xl md:text-[4rem] font-display font-bold tracking-tighter leading-[0.95] mb-8">
                 ¿Y si el <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-emerald to-neon-emerald/50 italic">miedo a fallar</span> fuera lo único que te separa de la obra que siempre soñaste pintar?
               </h1>
               <p className="text-xl md:text-2xl text-slate-300 mb-12 max-w-xl font-light leading-relaxed">
