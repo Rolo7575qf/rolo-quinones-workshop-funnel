@@ -515,7 +515,7 @@ export default function App() {
         </section>
 
         {/* Rolo in the World Section */}
-        <section className="py-32 bg-white overflow-hidden">
+        <section className="py-32 bg-white text-black overflow-hidden">
           <div className="max-w-7xl mx-auto px-6">
             <SectionTitle subtitle="En Terreno" accent="emerald">Pintando alrededor del mundo</SectionTitle>
             <div className="grid md:grid-cols-2 gap-12">
