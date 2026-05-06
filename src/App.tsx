@@ -104,7 +104,11 @@ const TRAJECTORY = [
 
 const PAINTING_WORLD = [
   { id: 1, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1774398411/1704126221112_qoh9la.jpg", location: "Sketch Urbano" },
-  { id: 2, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1774398410/Rolo%20_Historia.jpg", location: "Taller en Vivo" }
+  { id: 2, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1774398410/Rolo%20_Historia.jpg", location: "Taller en Vivo" },
+  { id: 3, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1778088670/Madrid.jpg", location: "Madrid, España" },
+  { id: 4, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1778088669/Liverpool.jpg", location: "Liverpool, UK" },
+  { id: 5, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1778088669/Londres.jpg", location: "Londres, UK" },
+  { id: 6, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1778088669/Cambrich_1.jpg", location: "Cambridge, UK" }
 ];
 
 export default function App() {
@@ -540,7 +544,7 @@ export default function App() {
         <section className="py-32 bg-white text-black overflow-hidden">
           <div className="max-w-7xl mx-auto px-6">
             <SectionTitle subtitle="En Terreno" accent="emerald">Pintando alrededor del mundo</SectionTitle>
-            <div className="grid md:grid-cols-2 gap-12">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
               {PAINTING_WORLD.map((item, idx) => (
                 <motion.div 
                   key={item.id}
@@ -555,8 +559,8 @@ export default function App() {
                     className="w-full h-full object-cover aspect-video transition-transform duration-700 group-hover:scale-105"
                     referrerPolicy="no-referrer"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-bottom p-8">
-                    <p className="text-white font-display text-xl mt-auto italic">{item.location}</p>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-bottom p-6 md:p-8">
+                    <p className="text-white font-display text-lg md:text-xl mt-auto italic">{item.location}</p>
                   </div>
                 </motion.div>
               ))}
