@@ -17,7 +17,9 @@ import {
   Palette,
   ChevronRight,
   Menu,
-  X
+  X,
+  Play,
+  Shield
 } from "lucide-react";
 
 // --- Constants & Data ---
