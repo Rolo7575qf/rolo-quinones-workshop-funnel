@@ -119,14 +119,7 @@ export default function App() {
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const handlePurchase = () => {
-    window.open('https://pay.hotmart.com/U99377775X?off=zcbvhlbz', '_blank');
-  };
-
-  return (
+    return (
     <div className="min-h-screen bg-[#0A0A0B] text-white font-sans selection:bg-neon-emerald/30 overflow-x-hidden">
       {/* Background Glows */}
       <div className="fixed top-0 left-0 w-full h-full pointer-events-none z-0 overflow-hidden">
@@ -145,12 +138,11 @@ export default function App() {
           
           <div className="hidden md:flex items-center gap-10 text-[10px] uppercase tracking-[0.3em] font-bold">
             <a href="#programa" className="hover:text-neon-emerald transition-colors">Workshop</a>
-            <a href="#horarios" className="hover:text-neon-emerald transition-colors">Fechas</a>
             <button 
               onClick={() => window.open('https://pay.hotmart.com/U99377775X?off=zcbvhlbz', '_blank')}
               className="px-8 py-3 bg-white text-black rounded-full hover:bg-neon-emerald hover:text-black transition-all font-black text-[9px] uppercase tracking-widest shadow-[0_0_20px_rgba(255,255,255,0.1)]"
             >
-              ¡Sí, quiero despertar mi artista interior!
+              Sí, quiero despertar mi artista interior
             </button>
           </div>
 
@@ -171,7 +163,6 @@ export default function App() {
           >
             <div className="flex flex-col gap-10 text-4xl font-display font-bold">
               <a href="#programa" onClick={() => setIsMenuOpen(false)}>Workshop</a>
-              <a href="#horarios" onClick={() => setIsMenuOpen(false)}>Fechas</a>
               <button 
                 onClick={() => {
                   setIsMenuOpen(false);
@@ -179,7 +170,7 @@ export default function App() {
                 }}
                 className="w-full py-5 bg-neon-emerald text-black rounded-full text-sm font-black uppercase tracking-widest"
               >
-                ¡Sí, quiero despertar mi artista interior! — $247
+                Sí, quiero despertar mi artista interior
               </button>
             </div>
           </motion.div>
@@ -187,33 +178,9 @@ export default function App() {
       </AnimatePresence>
 
       <main className="relative z-10">
-        {/* Success Alert */}
-        <AnimatePresence>
-          {hasPurchased && (
-            <motion.div 
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: "auto", opacity: 1 }}
-              className="bg-neon-emerald/10 border-b border-neon-emerald/20 overflow-hidden pt-32 pb-12"
-            >
-              <div className="max-w-4xl mx-auto px-6 text-center">
-                <CheckCircle2 className="w-12 h-12 text-neon-emerald mx-auto mb-6" />
-                <h3 className="text-4xl font-display font-bold mb-4">¡Bienvenido al Art.Lab!</h3>
-                <p className="text-slate-400 mb-8 max-w-md mx-auto font-light">Tu acceso ha sido procesado. Únete a los grupos para comenzar tu viaje artístico.</p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <button className="px-10 py-4 bg-white text-black rounded-full font-bold text-xs uppercase tracking-widest hover:bg-neon-emerald px-10 transition-colors">
-                    Acceder a Plataforma
-                  </button>
-                  <button className="px-10 py-4 bg-[#25D366] text-white rounded-full font-bold text-xs uppercase tracking-widest hover:opacity-90 flex items-center justify-center gap-2">
-                    <MessageCircle className="w-4 h-4 fill-current" /> WhatsApp VIP
-                  </button>
-                </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-        {/* Hero Section */}
-        <section className="min-h-screen flex items-center py-32 relative">
+        
+        {/* HERO SECTION */}
+        <section className="min-h-screen flex items-center pt-40 pb-20 relative">
           <div className="max-w-7xl mx-auto px-6 w-full grid lg:grid-cols-[1.2fr_0.8fr] gap-20 items-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -222,26 +189,25 @@ export default function App() {
             >
               <div className="flex flex-wrap items-center gap-4 mb-8">
                 <span className="w-12 h-[1px] bg-neon-emerald"></span>
-                <span className="text-neon-emerald text-[9px] font-black uppercase tracking-[0.5em]">Workshop Online</span>
-                <span className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[8px] font-black uppercase tracking-widest text-white/50">3 Sesiones de 2 horas</span>
+                <span className="text-neon-emerald text-[9px] font-black uppercase tracking-[0.5em]">El Despertar del Artista</span>
               </div>
-              <h1 className="text-3xl md:text-[4rem] font-display font-bold tracking-tighter leading-[0.95] mb-8">
-                ¿Cuántas veces has guardado tus pinceles por <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-emerald to-neon-emerald/50 italic">miedo a arruinar el papel?</span>
+              <h1 className="text-4xl md:text-6xl lg:text-[4rem] font-display font-bold tracking-tighter leading-[1] mb-8">
+                ¿Y si todavía no es demasiado tarde para convertirte en artista?
               </h1>
-              <p className="text-xl md:text-2xl text-slate-300 mb-12 max-w-xl font-light leading-relaxed">
-                Es hora de transformar esa frustración en tu mejor obra. Da el primer paso en la acuarela y descubre lo maravilloso que es crear disfrutando cada pincelada.
-              </p>
+              
+              <div className="space-y-4 text-xl md:text-2xl text-slate-400 font-light leading-relaxed mb-12 max-w-xl">
+                <p>Hay una parte de ti que lleva años esperando este momento.</p>
+                <p>Una parte silenciosa... creativa... sensible... que sueña con pintar, crear y expresarse... pero que ha vivido demasiado tiempo atrapada entre el miedo y la postergación.</p>
+                <p className="text-white italic font-display">Hoy puedes volver a encontrarla.</p>
+              </div>
               
               <div className="flex flex-col gap-4 items-start">
                 <button 
                   onClick={() => window.open('https://pay.hotmart.com/U99377775X?off=zcbvhlbz', '_blank')}
                   className="px-10 md:px-12 py-6 bg-neon-emerald text-black rounded-full text-xs font-black uppercase tracking-widest shadow-[0_10px_40px_rgba(0,255,157,0.2)] hover:shadow-[0_20px_60px_rgba(0,255,157,0.4)] hover:-translate-y-1 transition-all animate-shine"
                 >
-                  ¡Sí, quiero despertar mi artista interior! — $247
+                  Sí, quiero dejar de postergar mi lado artístico
                 </button>
-                <p className="text-[10px] text-slate-500 uppercase tracking-widest font-black max-w-md italic ml-4">
-                  * No dejes que otro año pase sin haberlo intentado. Transforma tu miedo en arte hoy mismo.
-                </p>
               </div>
             </motion.div>
 
@@ -253,7 +219,6 @@ export default function App() {
             >
               <div className="absolute inset-0 z-0 flex items-center justify-center">
                 <div className="w-[120%] h-[120%] border border-white/5 rounded-full orbit-item"></div>
-                <div className="w-[100%] h-[100%] border border-white/5 rounded-full absolute" style={{animation:'orbit 30s linear infinite reverse'}}></div>
               </div>
               <div className="relative z-10 w-full max-w-sm mx-auto aspect-[9/16] rounded-[40px] overflow-hidden shadow-[0_0_50px_rgba(0,255,157,0.1)] neon-border-emerald group">
                   <iframe 
@@ -270,295 +235,257 @@ export default function App() {
           </div>
         </section>
 
-        {/* Story & Video Section (Interés) */}
-        <section className="py-24 relative overflow-hidden bg-black/50 border-y border-white/5">
+        {/* EL DOLOR SILENCIOSO */}
+        <section className="py-32 relative overflow-hidden bg-black text-center border-t border-white/5">
+          <div className="max-w-4xl mx-auto px-6">
+            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+              <h2 className="text-4xl md:text-5xl font-display font-bold mb-12">Lo más triste no es no saber pintar...</h2>
+              
+              <div className="space-y-6 text-xl text-slate-400 font-light leading-relaxed max-w-2xl mx-auto">
+                <p className="text-white text-2xl font-display mb-8">Lo más triste es pasar años creyendo que ya es demasiado tarde.</p>
+                <p>Sé lo que se siente.</p>
+                <p>Guardar pinceles en un cajón.<br/>Comprar materiales “para algún día”.<br/>Mirar artistas en Instagram pensando:<br/><span className="italic">“ojalá yo pudiera hacer eso.”</span></p>
+                <p>Y mientras tanto... los años pasan. La creatividad se va apagando lentamente. La rutina ocupa todo el espacio. Y esa parte tuya que quería crear... empieza a quedarse en silencio.</p>
+                <p>Pero quiero decirte algo importante:</p>
+                
+                <h3 className="text-3xl md:text-4xl font-display font-bold text-white mt-12 mb-6">El problema nunca fue el talento.</h3>
+                <p className="text-xl">El problema fue seguir esperando el momento perfecto.</p>
+                
+                <div className="pt-12">
+                  <button 
+                    onClick={() => window.open('https://pay.hotmart.com/U99377775X?off=zcbvhlbz', '_blank')}
+                    className="text-neon-emerald hover:text-white transition-colors uppercase tracking-[0.3em] font-bold text-[10px] pb-2 border-b border-neon-emerald/30 hover:border-white"
+                  >
+                    Quizá hoy pueda ser ese momento
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* STORYTELLING DE ROLO */}
+        <section className="py-32 relative overflow-hidden bg-white/[0.02] border-y border-white/5">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="order-2 lg:order-1"
-              >
-                <div className="aspect-[4/5] w-full max-w-md mx-auto rounded-[40px] overflow-hidden border border-white/10 relative group shadow-2xl">
-                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all z-10 flex items-center justify-center">
-                  </div>
-                  <img src="https://res.cloudinary.com/diqwlgqig/image/upload/v1774398410/Rolo%20_Historia.jpg" alt="Rolo pintando" className="w-full h-full object-cover" />
+              <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="order-2 lg:order-1">
+                <div className="aspect-[4/5] w-full max-w-md mx-auto rounded-[40px] overflow-hidden border border-white/10 relative shadow-2xl">
+                  <img src="https://res.cloudinary.com/diqwlgqig/image/upload/v1774398410/Rolo%20_Historia.jpg" alt="Rolo pintando en el taller" className="w-full h-full object-cover grayscale brightness-75 hover:grayscale-0 hover:brightness-100 transition-all duration-700" />
                 </div>
               </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="order-1 lg:order-2"
-              >
-                <SectionTitle subtitle="Mi Historia" accent="emerald">De la frustración a la primera pincelada con sentido</SectionTitle>
+              <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="order-1 lg:order-2">
+                <h2 className="text-4xl md:text-5xl font-display font-bold mb-10">Yo también pensé que no era capaz.</h2>
                 <div className="space-y-6 text-lg text-slate-400 font-light leading-relaxed">
-                  <p>
-                    Seguramente has sentido esas ganas de tomar el pincel, pero algo te detiene. Quizás es el miedo paralizante a arruinar ese papel en blanco tan caro, o la frustración de ver cómo el agua se desborda sin control, llevándose tus ganas de seguir. Yo estuve ahí: para mí, la acuarela no era un arte, era un muro insuperable.
-                  </p>
-                  <p>
-                    Desde niño miraba las obras al óleo de mi abuelo, que era pintor y, aunque sentía el llamado del arte, nunca tomé la decisión de aprender. Hasta que llegó el año 2020 y la pandemia.
-                  </p>
-                  <p>
-                    El encierro me obligó a mirar de frente mis sueños postergados. Fue ahí cuando tomé una decisión que lo cambió todo: dejé de pelear con el agua y empecé a entender su lenguaje. Mis hitos de transformación:
-                  </p>
-                  <ul className="space-y-4 pl-4 border-l-2 border-neon-emerald/30 text-base text-slate-300">
-                    <li>
-                      <strong className="text-white">Romper la inercia:</strong> Decidí que mi miedo sería mi motor, no mi freno. Invertí en formación con grandes mentores internacionales, observándolos pintar en vivo y descifrando aquello que los libros no enseñan.
-                    </li>
-                    <li>
-                      <strong className="text-white">El método tras la magia:</strong> Entendí que la acuarela no es azar, sino una danza entre control y libertad. Pasé de manchas accidentales a mi primera pincelada con sentido, esa donde tú decides dónde va la luz y dónde el agua cuenta la historia.
-                    </li>
-                    <li>
-                      <strong className="text-white">De aprendiz a guía:</strong> Logré transformar esa parálisis técnica en un sistema claro y replicable. Mis propios logros como acuarelista hoy no son trofeos personales, sino la prueba de que el talento se construye con el método correcto.
-                    </li>
-                  </ul>
-                  <p>
-                    Hoy, mi misión es evitar que pases por esa misma parálisis que me detuvo a mí durante años. Este workshop no es solo técnica; es el espejo de mi propio viaje, diseñado paso a paso para que tú no abandones tu sueño de pintar.
-                  </p>
-                  <p className="text-xl font-display text-white italic">
-                    No estás tarde. Estás a una pincelada de distancia de despertar a tu artista.
-                  </p>
-                </div>
-                <div className="mt-10 p-6 glass-vanguard border-white/5 rounded-2xl relative overflow-hidden">
-                  <div className="absolute top-0 left-0 w-2 h-full bg-neon-emerald"></div>
-                  <p className="italic text-slate-300 font-display text-xl ml-4">"Rolo no solo te enseña a pintar, te enseña a perder el miedo a equivocarte y a disfrutar del agua."</p>
-                  <p className="text-[10px] text-neon-emerald uppercase tracking-widest font-black mt-4 ml-4">— Alumna de Superación Artística</p>
+                  <p>Desde niño, el olor a óleo en el taller de mi abuelo se quedó grabado dentro de mí. Lo veía pintar y sentía admiración... pero también distancia. Pensaba: <span className="italic">“él tiene un don.” “yo no nací para eso.”</span></p>
+                  <p>Y así comenzaron años de frustración silenciosa. Compré materiales que nunca usé. Miraba el papel en blanco como si fuera un enemigo. Me paralizaba la idea de equivocarme.</p>
+                  <p>Hasta que llegó el año 2020. El mundo se detuvo... y por primera vez tuve que mirar de frente todo lo que llevaba años postergando. Ahí entendí algo que cambió mi vida:</p>
+                  
+                  <div className="py-6 border-l-2 border-neon-emerald/50 pl-6 my-8">
+                    <h3 className="text-2xl font-display text-white font-bold mb-4">La acuarela no se trata de pintar perfecto. Se trata de atreverse a sentir.</h3>
+                  </div>
+
+                  <p>Dejar de pelear con el agua. Soltar el miedo. Aceptar el error. Volver a jugar. Volver a crear.</p>
+                  <p>Y poco a poco... la frustración se transformó en libertad. Hoy mis obras han viajado por distintos lugares del mundo. Pero honestamente... mi mayor logro no son las exposiciones.</p>
+                  <p className="text-white font-display text-xl">Mi mayor logro fue descubrir que nunca era demasiado tarde para empezar.</p>
+                  <p>Y si yo pude hacerlo... tú también puedes.</p>
+                  
+                  <div className="pt-8">
+                    <button 
+                      onClick={() => window.open('https://pay.hotmart.com/U99377775X?off=zcbvhlbz', '_blank')}
+                      className="px-10 py-5 bg-white/10 text-white rounded-full text-xs font-black uppercase tracking-widest hover:bg-neon-emerald hover:text-black transition-all"
+                    >
+                      Quiero atreverme a comenzar
+                    </button>
+                  </div>
                 </div>
               </motion.div>
             </div>
           </div>
         </section>
 
-        {/* Qué vas a lograr */}
-        <section className="py-24 relative overflow-hidden bg-black">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="text-center mb-16">
-               <h2 className="text-4xl md:text-5xl font-display font-bold">¿Qué vas a lograr?</h2>
-               <p className="text-slate-400 mt-4 font-light max-w-xl mx-auto">Un método 100% práctico desde el día 1, sin teoría aburrida.</p>
-            </div>
-            <div className="grid md:grid-cols-2 gap-12">
-               <div className="p-10 glass-vanguard rounded-[40px] border border-white/5 shadow-2xl relative overflow-hidden group hover:border-neon-emerald/30 transition-all">
-                 <div className="absolute top-0 right-0 p-8 opacity-20 group-hover:opacity-40 transition-opacity"><Palette className="w-24 h-24 text-neon-emerald" /></div>
-                 <h3 className="text-2xl font-display font-bold mb-6 text-neon-emerald relative z-10">Resultados Tangibles</h3>
-                 <ul className="space-y-4 relative z-10 text-slate-300 font-light">
-                   <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 bg-neon-emerald rounded-full shrink-0 mt-2"></div><span>Dominio práctico de la técnica y soltura en tus trazos.</span></li>
-                   <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 bg-neon-emerald rounded-full shrink-0 mt-2"></div><span>Control absoluto del agua y el pigmento.</span></li>
-                   <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 bg-neon-emerald rounded-full shrink-0 mt-2"></div><span>Creación de paletas y mezclas de color precisas.</span></li>
-                 </ul>
-               </div>
-               
-               <div className="p-10 glass-vanguard rounded-[40px] border border-white/5 shadow-2xl relative overflow-hidden group hover:border-neon-amber/30 transition-all">
-                 <div className="absolute top-0 right-0 p-8 opacity-20 group-hover:opacity-40 transition-opacity"><CheckCircle2 className="w-24 h-24 text-neon-amber" /></div>
-                 <h3 className="text-2xl font-display font-bold mb-6 text-neon-amber relative z-10">Beneficios Intangibles</h3>
-                 <ul className="space-y-4 relative z-10 text-slate-300 font-light">
-                   <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 bg-neon-amber rounded-full shrink-0 mt-2"></div><span>Confianza absoluta frente al temido papel blanco.</span></li>
-                   <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 bg-neon-amber rounded-full shrink-0 mt-2"></div><span>Paz mental y desconexión durante tu proceso creativo.</span></li>
-                   <li className="flex items-start gap-3"><div className="w-1.5 h-1.5 bg-neon-amber rounded-full shrink-0 mt-2"></div><span>El profundo orgullo de poder enmarcar y exhibir tu propia obra.</span></li>
-                 </ul>
-               </div>
+        {/* IDENTIFICACIÓN */}
+        <section className="py-32 relative bg-black">
+          <div className="max-w-4xl mx-auto px-6">
+            <SectionTitle subtitle="Es un reflejo de ti" accent="amber">Quizá esta experiencia es para ti si...</SectionTitle>
+            <div className="mt-12 space-y-6">
+              {[
+                "Siempre soñaste con pintar pero nunca te atreviste.",
+                "Compraste acuarelas y todavía siguen guardadas.",
+                "Sientes miedo al papel en blanco.",
+                "Crees que “no tienes talento”.",
+                "Necesitas un espacio creativo que sea solo tuyo.",
+                "Estás cansado del estrés y quieres volver a sentir calma.",
+                "Has postergado tanto tiempo tu lado artístico... que ya no quieres seguir esperando."
+              ].map((item, idx) => (
+                <motion.div 
+                  key={idx}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: idx * 0.1 }}
+                  viewport={{ once: true }}
+                  className="flex items-center gap-6 p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-neon-amber/30 transition-all"
+                >
+                  <div className="w-2 h-2 rounded-full bg-neon-amber shrink-0"></div>
+                  <p className="text-lg text-slate-300 font-light">{item}</p>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Modules Section */}
-        <section id="programa" className="py-32 relative overflow-hidden bg-white/[0.02]">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="text-center max-w-4xl mx-auto mb-20">
-              <SectionTitle subtitle="El Programa" accent="amber">Despierta tu Artista: Secretos de la Acuarela con Rolo Quiñones</SectionTitle>
-              <p className="text-xl text-slate-400 font-light leading-relaxed mt-6">
-                Un espacio diseñado para activar tu creatividad a través de un método 100% práctico que podrás aplicar desde el primer día. No solo aprenderás técnica; aprenderás a disfrutar el proceso.
-              </p>
+        {/* VISUAL EMOCIONAL */}
+        <section className="py-40 relative bg-white/[0.02] text-center overflow-hidden border-y border-white/5">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-3xl bg-neon-emerald/5 blur-[150px] rounded-full pointer-events-none"></div>
+          <div className="max-w-3xl mx-auto px-6 relative z-10">
+            <h2 className="text-5xl md:text-7xl font-display font-bold mb-16 opacity-20">Imagina esto...</h2>
+            <div className="space-y-8 text-2xl md:text-4xl font-display font-light text-slate-300 leading-tight">
+              <p>Servirte una taza de té.<br/>Respirar profundo.<br/>Escuchar música suave.<br/>Tomar un pincel después de años.<br/>Y descubrir...</p>
+              <p className="text-white font-bold italic">que todavía puedes crear algo hermoso con tus propias manos.</p>
+              <p className="pt-12 text-xl text-slate-400">Imagínate terminando una acuarela...<br/>mirándola en silencio...<br/>y pensando:</p>
+              <h3 className="text-5xl md:text-6xl font-bold text-neon-emerald py-8">“¿De verdad hice esto yo?”</h3>
+              <p className="text-xl text-slate-400">Porque muchas veces... el arte no despierta solo creatividad. También despierta partes de nosotros que creíamos perdidas.</p>
             </div>
             
-            <div className="grid md:grid-cols-3 gap-8">
-              {MODULES.map((module, idx) => (
-                <motion.div
-                  key={module.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="p-10 rounded-[40px] glass-vanguard border-white/5 group hover:neon-border-amber transition-all duration-500"
-                >
-                  <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center mb-8 shadow-inner group-hover:bg-neon-amber transition-all duration-500">
-                    <div className="group-hover:text-black text-neon-amber transition-colors">
-                      {React.cloneElement(module.icon as React.ReactElement, { className: "w-8 h-8" })}
-                    </div>
-                  </div>
-                  <h3 className="text-2xl font-display font-bold mb-4">{module.title}</h3>
-                  <p className="text-slate-500 mb-8 text-sm leading-relaxed font-light">{module.description}</p>
-                  <ul className="space-y-4">
-                    {module.topics.map((topic, i) => (
-                      <li key={i} className="flex items-start gap-4 text-[11px] font-bold text-slate-400 group-hover:text-slate-200 transition-colors uppercase tracking-wider">
-                        <div className="w-1.5 h-1.5 bg-neon-amber rounded-full shrink-0 mt-1.5 shadow-[0_0_5px_rgba(245,158,11,0.5)]"></div>
-                        <span>{topic}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Bonus Section */}
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="mt-16 p-10 rounded-[40px] bg-gradient-to-br from-neon-amber/20 via-transparent to-transparent border border-neon-amber/30 relative overflow-hidden"
-            >
-              <div className="absolute top-0 right-0 p-8">
-                <span className="text-[10px] font-black uppercase tracking-[0.5em] text-neon-amber px-4 py-2 bg-neon-amber/10 rounded-full">Al inscribirte hoy</span>
-              </div>
-              <div className="flex flex-col md:flex-row items-center gap-12">
-                <div className="shrink-0 w-24 h-24 bg-neon-amber/20 rounded-3xl flex items-center justify-center">
-                  <CheckCircle2 className="w-10 h-10 text-neon-amber" />
-                </div>
-                <div className="grid md:grid-cols-2 gap-8 w-full">
-                  <div className="flex items-start gap-4">
-                    <div className="mt-1 shrink-0 w-5 h-5 rounded-full border border-neon-amber/30 flex items-center justify-center text-[10px] font-bold text-neon-amber">1</div>
-                    <div>
-                      <h4 className="text-xl font-display font-bold mb-1">Garantía de Formación</h4>
-                      <p className="text-slate-200 text-sm font-normal leading-relaxed">Acceso GRATUITO por 1 año al curso "Los 4 Pilares de la Acuarela" <span className="text-neon-amber font-bold">(Valorado en $27 USD - GRATIS)</span>.</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="mt-1 shrink-0 w-5 h-5 rounded-full border border-neon-amber/30 flex items-center justify-center text-[10px] font-bold text-neon-amber">2</div>
-                    <div>
-                      <h4 className="text-xl font-display font-bold mb-1">Comunidad VIP</h4>
-                      <p className="text-slate-200 text-sm font-normal leading-relaxed">Acceso a la comunidad exclusiva de Rolo Acuarelas <span className="text-neon-amber font-bold">(Valorada en $47 USD - GRATIS)</span>.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mt-12 bg-neon-amber/5 border border-neon-amber/20 rounded-3xl p-8 max-w-3xl mx-auto text-center"
-            >
-              <p className="text-neon-amber font-black uppercase tracking-widest text-[10px] mb-3">Nota de Exclusividad</p>
-              <p className="text-slate-300 font-light text-sm md:text-base">
-                Para garantizar que recibas una atención personalizada y pueda guiar tus pinceladas de cerca, este workshop está limitado a solo <span className="font-bold text-white">15 participantes</span>.
-              </p>
-              
-              <div className="mt-6 flex flex-col items-center">
-                <div className="flex justify-between w-full max-w-xs text-[10px] uppercase font-black tracking-widest text-slate-400 mb-2">
-                  <span>Cupos Ocupados</span>
-                  <span className="text-neon-amber">12 / 15</span>
-                </div>
-                <div className="w-full max-w-xs h-1.5 bg-white/10 rounded-full overflow-hidden">
-                  <div className="h-full bg-neon-amber w-[80%] rounded-full shadow-[0_0_10px_rgba(245,158,11,0.5)]"></div>
-                </div>
-                <p className="text-neon-amber font-black text-xs mt-3 animate-pulse">¡Últimos 3 cupos disponibles!</p>
-              </div>
-            </motion.div>
-
-            <motion.div 
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="mt-16 text-center flex flex-col items-center gap-4"
-            >
+            <div className="pt-20">
               <button 
                 onClick={() => window.open('https://pay.hotmart.com/U99377775X?off=zcbvhlbz', '_blank')}
-                className="px-14 py-6 bg-white text-black rounded-full text-xs font-black uppercase tracking-widest hover:bg-neon-amber hover:text-black transition-all animate-shine shadow-2xl"
+                className="text-neon-amber hover:text-white transition-colors uppercase tracking-[0.3em] font-bold text-[10px] pb-2 border-b border-neon-amber/30 hover:border-white"
               >
-                ¡Sí, quiero despertar mi artista interior!
+                Sí... quiero vivir eso
               </button>
-              <p className="text-[10px] text-slate-500 uppercase tracking-widest font-black max-w-md italic">
-                * No dejes que otro año pase sin haberlo intentado. Transforma tu miedo en arte hoy mismo.
-              </p>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Schedule Section */}
-        <section id="horarios" className="py-32 relative">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="grid lg:grid-cols-2 gap-24 items-center">
-              <div>
-                <SectionTitle subtitle="Calendario" accent="emerald">Fechas de las sesiones y horarios por país</SectionTitle>
-                <p className="text-slate-400 mb-12 text-lg font-light leading-relaxed">
-                  3 Sesiones de 2 horas cada una. Conéctate en vivo y transforma tu técnica con guía personalizada.
-                </p>
-                
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="p-8 glass-vanguard rounded-3xl border-white/5">
-                    <Calendar className="w-6 h-6 text-neon-emerald mb-4" />
-                    <p className="text-[10px] uppercase font-black tracking-widest text-slate-500 mb-1">Días</p>
-                    <p className="text-xl font-display font-bold tracking-tight">Mayo 20, 21, 22</p>
-                  </div>
-                  <div className="p-8 glass-vanguard rounded-3xl border-white/5">
-                    <Clock className="w-6 h-6 text-neon-emerald mb-4" />
-                    <p className="text-[10px] uppercase font-black tracking-widest text-slate-500 mb-1">Sesiones</p>
-                    <p className="text-xl font-display font-bold tracking-tight">3 x 120 Mins</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="glass-vanguard p-12 rounded-[50px] border-white/10 shadow-2xl relative overflow-hidden">
-                <div className="space-y-4 relative z-10">
-                  {SCHEDULE.map((item, idx) => (
-                    <motion.div 
-                      key={idx}
-                      initial={{ opacity: 0, x: 20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: idx * 0.05 }}
-                      className="flex justify-between items-center py-6 border-b border-white/5 last:border-0 hover:bg-white/5 px-4 rounded-2xl transition-all group"
-                    >
-                      <div>
-                        <p className="text-xs uppercase font-black tracking-widest text-slate-400 group-hover:text-white transition-colors">{item.country}</p>
-                        <p className="text-[10px] text-slate-600 font-mono mt-1 uppercase">{item.offset}</p>
-                      </div>
-                      <div className="text-right">
-                        <p className="text-2xl font-display font-bold text-neon-emerald transition-transform group-hover:scale-110">{item.time}</p>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
             </div>
           </div>
         </section>
 
-        {/* Trajectory */}
-        <section id="trayectoria" className="py-24 bg-black relative">
-          <div className="absolute inset-0 bg-radial-gradient"></div>
-          <div className="max-w-7xl mx-auto px-6 relative z-10">
-            <SectionTitle subtitle="Experience" accent="emerald">Trayectoria Internacional</SectionTitle>
-            <div className="grid md:grid-cols-2 gap-x-12 gap-y-2">
-              {TRAJECTORY.map((item, idx) => (
-                <motion.div 
-                   key={idx}
-                   initial={{ opacity: 0, y: 10 }}
-                   whileInView={{ opacity: 1, y: 0 }}
-                   viewport={{ once: true }}
-                   className="group flex items-center justify-between py-4 px-6 glass-vanguard border-transparent hover:border-neon-emerald/20 transition-all duration-300 rounded-2xl"
-                >
-                  <div className="flex items-center gap-4">
-                    <span className="text-[10px] font-black font-mono text-slate-600 group-hover:text-neon-emerald transition-colors">{item.year}</span>
+        {/* PRESENTACIÓN DEL WORKSHOP */}
+        <section id="programa" className="py-32 relative bg-black">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="text-center max-w-3xl mx-auto mb-20">
+              <h2 className="text-4xl md:text-6xl font-display font-bold mb-6">Esto no es un curso más.</h2>
+              <h3 className="text-2xl md:text-4xl font-display text-neon-emerald">Es una experiencia de transformación artística y emocional.</h3>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-16 items-start">
+              <div>
+                <p className="text-xl text-slate-300 font-light leading-relaxed mb-10">
+                  Bienvenido al Workshop en Vivo de Acuarela con Rolo Quiñones. Una experiencia íntima y guiada donde no solo aprenderás técnica... Aprenderás a perderle miedo al papel en blanco, confiar en tu intuición, disfrutar el proceso, expresarte libremente, y reconectar con una parte de ti que quizá llevabas años ignorando.
+                </p>
+                <div className="p-10 rounded-[40px] glass-vanguard border border-white/5 shadow-2xl relative overflow-hidden">
+                  <div className="absolute top-0 right-0 p-8 opacity-10"><Palette className="w-32 h-32 text-neon-emerald" /></div>
+                  <h4 className="text-3xl font-display font-bold mb-8 relative z-10">¿Qué Incluye?</h4>
+                  
+                  <div className="flex items-start gap-6 mb-8 relative z-10">
+                    <div className="w-12 h-12 rounded-full bg-neon-emerald/20 flex items-center justify-center shrink-0 border border-neon-emerald/30">
+                      <Calendar className="w-5 h-5 text-neon-emerald" />
+                    </div>
                     <div>
-                      <p className="text-[8px] font-black uppercase text-neon-emerald tracking-[0.2em]">{item.org}</p>
-                      <h4 className="text-lg font-display font-bold tracking-tight">{item.award}</h4>
+                      <h5 className="text-xl font-bold mb-2">3 Sesiones EN VIVO junto a Rolo</h5>
+                      <p className="text-slate-400 font-light">Donde pintarás paso a paso acompañado personalmente. No estarás solo.</p>
                     </div>
                   </div>
-                  <p className="text-slate-500 italic text-[10px] font-light max-w-[150px] text-right leading-tight">
-                    {item.details.split(' ').slice(0, 5).join(' ')}...
+                  
+                  <div className="flex items-start gap-6 mb-8 relative z-10">
+                    <div className="w-12 h-12 rounded-full bg-neon-amber/20 flex items-center justify-center shrink-0 border border-neon-amber/30">
+                      <Play className="w-5 h-5 text-neon-amber" />
+                    </div>
+                    <div>
+                      <h5 className="text-xl font-bold mb-2">BONO 1: "Los 4 Pilares de la Acuarela"</h5>
+                      <p className="text-slate-400 font-light text-sm mb-2">Más de 40 lecciones grabadas para ayudarte a comprender agua, transparencia, color, atmósfera, y composición.</p>
+                      <p className="text-xs uppercase tracking-widest font-black text-neon-amber">Valor real: 27 USD — <span className="text-white bg-white/10 px-2 py-1 rounded">Incluido GRATIS</span></p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-6 relative z-10">
+                    <div className="w-12 h-12 rounded-full bg-neon-amber/20 flex items-center justify-center shrink-0 border border-neon-amber/30">
+                      <MessageCircle className="w-5 h-5 text-neon-amber" />
+                    </div>
+                    <div>
+                      <h5 className="text-xl font-bold mb-2">BONO 2: Comunidad Privada</h5>
+                      <p className="text-slate-400 font-light text-sm mb-2">Un espacio íntimo para compartir procesos, avances, dudas, inspiración y crear acompañado.</p>
+                      <p className="text-xs uppercase tracking-widest font-black text-neon-amber">Valor real: 47 USD — <span className="text-white bg-white/10 px-2 py-1 rounded">Incluido GRATIS</span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="space-y-6">
+                
+                {/* GRUPO PIONERO */}
+                <div className="p-10 rounded-[40px] border border-white/5 bg-white/[0.02]">
+                  <h4 className="text-2xl font-display font-bold mb-4 text-white">Este será un grupo pequeño. Y eso es intencional.</h4>
+                  <p className="text-slate-300 font-light mb-4 text-sm leading-relaxed">
+                    No quiero crear un curso masivo e impersonal. Quiero acompañar de cerca a las primeras personas que decidan vivir esta experiencia. Por eso los cupos son limitados.
                   </p>
-                </motion.div>
-              ))}
+                  <p className="text-slate-300 font-light mb-6 text-sm leading-relaxed">
+                    Quiero conocer tu proceso. Ver tus avances. Responder tus dudas. Y ayudarte personalmente a desbloquear tu creatividad.
+                  </p>
+                  <p className="text-neon-emerald font-display italic text-lg">Este primer grupo no será solo un workshop. Será el comienzo de una comunidad artística real.</p>
+                </div>
+
+                <div className="p-10 rounded-[40px] border border-neon-emerald/30 bg-neon-emerald/5 shadow-[0_0_50px_rgba(0,255,157,0.05)] text-center relative overflow-hidden">
+                  <div className="absolute -top-20 -right-20 w-40 h-40 bg-neon-emerald/20 blur-[50px] rounded-full"></div>
+                  <h4 className="text-xl font-display font-bold mb-2 text-white relative z-10">Esto puede acompañarte toda la vida.</h4>
+                  <p className="text-sm text-slate-400 mb-6 font-light relative z-10">Por menos de lo que muchas personas gastan en un fin de semana olvidable... puedes regalarte una experiencia transformadora.</p>
+                  <p className="text-xs text-neon-emerald uppercase tracking-widest font-black mb-4 relative z-10">Workshop + Bonos + Comunidad</p>
+                  <div className="flex justify-center items-baseline gap-2 mb-8 relative z-10">
+                    <span className="text-xl font-display font-bold text-neon-emerald/50">USD</span>
+                    <span className="text-7xl font-display font-black tracking-tighter text-white">147</span>
+                  </div>
+                  <button 
+                    onClick={() => window.open('https://pay.hotmart.com/U99377775X?off=zcbvhlbz', '_blank')}
+                    className="w-full py-5 bg-white text-black rounded-full text-xs font-black uppercase tracking-widest shadow-2xl hover:bg-neon-emerald hover:text-black transition-all relative z-10"
+                  >
+                    Sí, quiero despertar mi artista interior
+                  </button>
+                  <p className="text-[10px] text-slate-500 uppercase tracking-widest font-black mt-4 relative z-10">Pago único.</p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Rolo in the World Section */}
-        <section className="py-32 bg-white text-black overflow-hidden">
+        {/* MANEJO DE OBJECIONES */}
+        <section className="py-32 bg-white/[0.02] border-y border-white/5">
+          <div className="max-w-7xl mx-auto px-6">
+            <SectionTitle subtitle="Mitos comunes" accent="amber">No dejes que tu mente te detenga</SectionTitle>
+            <div className="grid md:grid-cols-2 gap-10 mt-12">
+              <div className="p-8 rounded-3xl bg-black border border-white/5 hover:border-white/20 transition-all">
+                <h4 className="text-xl font-display font-bold text-white mb-4">“No tengo talento...”</h4>
+                <p className="text-slate-400 font-light leading-relaxed">Nadie nace sabiendo pintar acuarela. Los artistas que hoy admiras también sintieron miedo la primera vez que tocaron un pincel. No necesitas perfección. Necesitas darte permiso para comenzar.</p>
+              </div>
+              <div className="p-8 rounded-3xl bg-black border border-white/5 hover:border-white/20 transition-all">
+                <h4 className="text-xl font-display font-bold text-white mb-4">“Nunca he pintado...”</h4>
+                <p className="text-slate-400 font-light leading-relaxed">Perfecto. No necesitas experiencia previa. Solo ganas de descubrir algo nuevo dentro de ti.</p>
+              </div>
+              <div className="p-8 rounded-3xl bg-black border border-white/5 hover:border-white/20 transition-all">
+                <h4 className="text-xl font-display font-bold text-white mb-4">“Ya estoy grande para empezar...”</h4>
+                <p className="text-slate-400 font-light leading-relaxed">La creatividad no tiene edad. Y honestamente... quizá hoy tengas más sensibilidad, más historia y más emoción para expresar que nunca antes.</p>
+              </div>
+              <div className="p-8 rounded-3xl bg-black border border-white/5 hover:border-white/20 transition-all">
+                <h4 className="text-xl font-display font-bold text-white mb-4">“Tengo miedo de fracasar...”</h4>
+                <p className="text-slate-400 font-light leading-relaxed">Aquí no existen los fracasos. Solo manchas... aprendizajes... y nuevas formas de mirar el mundo.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* GARANTÍA */}
+        <section className="py-24 bg-black">
+          <div className="max-w-4xl mx-auto px-6 text-center">
+            <div className="w-20 h-20 mx-auto bg-neon-emerald/10 rounded-full flex items-center justify-center mb-8">
+              <Shield className="w-10 h-10 text-neon-emerald" />
+            </div>
+            <h2 className="text-3xl md:text-5xl font-display font-bold mb-8">Quiero que entres sin miedo.</h2>
+            <p className="text-xl text-slate-300 font-light leading-relaxed mb-8">
+              Si después de la primera sesión sientes que esta experiencia no era para ti... solo escríbeme personalmente y te devolveré el 100% de tu inversión. Así de simple.
+            </p>
+            <p className="text-lg text-neon-emerald italic font-display">Porque quiero que tomes esta decisión desde la ilusión... no desde la presión.</p>
+          </div>
+        </section>
+
+        {/* PINTANDO EN TERRENO */}
+        <section className="py-32 bg-white/[0.02] text-white overflow-hidden border-t border-white/5">
           <div className="max-w-7xl mx-auto px-6">
             <SectionTitle subtitle="En Terreno" accent="emerald">Pintando alrededor del mundo</SectionTitle>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
@@ -568,7 +495,7 @@ export default function App() {
                   initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
-                  className="relative group rounded-3xl overflow-hidden shadow-2xl"
+                  className="relative group rounded-3xl overflow-hidden shadow-2xl border border-white/5"
                 >
                   <img 
                     src={item.url} 
@@ -576,7 +503,7 @@ export default function App() {
                     className="w-full h-full object-cover aspect-video transition-transform duration-700 group-hover:scale-105"
                     referrerPolicy="no-referrer"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-bottom p-6 md:p-8">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-bottom p-6 md:p-8">
                     <p className="text-white font-display text-lg md:text-xl mt-auto italic">{item.location}</p>
                   </div>
                 </motion.div>
@@ -585,8 +512,8 @@ export default function App() {
           </div>
         </section>
 
-        {/* Gallery Section */}
-        <section id="galeria" className="py-32">
+        {/* GALERÍA DE OBRAS */}
+        <section id="galeria" className="py-32 bg-black border-y border-white/5">
           <div className="max-w-7xl mx-auto px-6">
             <SectionTitle subtitle="Portafolio" accent="amber">Obras Recientes</SectionTitle>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -597,7 +524,7 @@ export default function App() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
-                  className="relative aspect-square rounded-[40px] overflow-hidden group shadow-2xl"
+                  className="relative aspect-square rounded-[40px] overflow-hidden group shadow-2xl border border-white/5"
                 >
                   <img 
                     src={img.url} 
@@ -606,8 +533,7 @@ export default function App() {
                     referrerPolicy="no-referrer"
                   />
                   <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-8">
-                    <p className="text-neon-amber text-[9px] font-black uppercase tracking-widest mb-1 italic">Fine Art Print</p>
-                    <p className="text-white text-3xl font-display font-bold leading-none">{img.title}</p>
+                    <p className="text-white text-xl md:text-2xl font-display font-bold leading-none">{img.title}</p>
                   </div>
                 </motion.div>
               ))}
@@ -615,49 +541,32 @@ export default function App() {
           </div>
         </section>
 
-        {/* Final CTA */}
-        <section id="comprar" className="py-24 relative">
-          <div className="max-w-5xl mx-auto px-6">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="p-12 md:p-20 rounded-[50px] glass-vanguard border-neon-emerald/10 overflow-hidden relative"
+        {/* CIERRE CINEMATOGRÁFICO */}
+        <section className="py-40 bg-white/[0.02] text-center relative overflow-hidden">
+          <div className="max-w-3xl mx-auto px-6 relative z-10">
+            <div className="space-y-8 text-2xl md:text-4xl font-display font-light text-slate-300 leading-relaxed mb-20">
+              <p>Quizá dentro de unos años recuerdes este momento.</p>
+              <p>El momento exacto en el que decidiste dejar de seguir postergando algo importante para ti.</p>
+              <p>La acuarela no cambiará quién eres. Pero quizá pueda ayudarte a reencontrarte con una parte de ti que había quedado dormida.</p>
+              <p className="text-white font-bold">El artista que vive dentro de ti sigue ahí. Esperando.</p>
+              <p className="text-neon-emerald italic">Y tal vez... hoy sea el día en que finalmente decidas escucharlo.</p>
+            </div>
+            
+            <button 
+              onClick={() => window.open('https://pay.hotmart.com/U99377775X?off=zcbvhlbz', '_blank')}
+              className="px-14 py-7 bg-white text-black rounded-full text-sm font-black uppercase tracking-widest shadow-[0_20px_60px_rgba(255,255,255,0.1)] hover:bg-neon-emerald hover:-translate-y-1 transition-all animate-shine mb-12"
             >
-              <div className="absolute -top-24 -right-24 w-64 h-64 bg-neon-emerald/5 rounded-full blur-[80px]"></div>
-              
-              <div className="relative z-10 text-center">
-                <SectionTitle subtitle="Únete al Art.Lab" accent="emerald">Transforma tu arte hoy</SectionTitle>
-                <div className="mb-12">
-                   <div className="flex justify-center items-baseline gap-2">
-                    <span className="text-xl font-display font-bold text-neon-emerald/50">USD</span>
-                    <span className="text-9xl md:text-[12rem] font-display font-black tracking-[-0.08em] leading-none mb-4">247</span>
-                  </div>
-                  <p className="text-slate-400 font-light tracking-[0.2em] uppercase text-[10px]">Inversión única / Acceso de por vida</p>
-                </div>
-
-                <div className="flex flex-col gap-6 max-w-sm mx-auto">
-                  <p className="text-neon-amber font-bold text-sm tracking-wide bg-neon-amber/10 py-2 px-4 rounded-lg">
-                    ⚠️ Atención: Solo quedan 3 cupos disponibles para mantener la experiencia 100% personalizada.
-                  </p>
-                  <button 
-                    onClick={handlePurchase}
-                    className="w-full py-7 bg-white text-black rounded-full text-xs font-black uppercase tracking-widest shadow-[0_20px_60px_rgba(255,255,255,0.1)] hover:bg-neon-emerald hover:-translate-y-1 transition-all group active:scale-95 animate-shine"
-                  >
-                    ¡Sí, quiero despertar mi artista interior!
-                  </button>
-                  <p className="text-[10px] text-slate-500 uppercase tracking-widest font-black italic -mt-2">
-                    * No dejes que otro año pase sin haberlo intentado. Transforma tu miedo en arte hoy mismo.
-                  </p>
-                  <div className="flex items-center justify-center gap-6 text-[9px] font-black uppercase tracking-widest text-slate-600">
-                    <div className="flex items-center gap-1.5"><CheckCircle2 className="w-3 h-3 text-neon-emerald" /> Stripe</div>
-                    <div className="flex items-center gap-1.5"><CheckCircle2 className="w-3 h-3 text-neon-emerald" /> PayPal</div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
+              Estoy listo para comenzar
+            </button>
+            
+            <div className="space-y-4 text-xs uppercase font-black tracking-widest text-slate-500 max-w-sm mx-auto p-6 border border-white/5 rounded-2xl bg-black">
+              <p>⚠️ Cupos limitados para mantener una experiencia cercana y personalizada.</p>
+              <p>📅 Las inscripciones cierran pronto.</p>
+              <p className="text-neon-amber pt-2 border-t border-white/5">🎨 Este puede ser el comienzo de algo muy hermoso para ti.</p>
+            </div>
           </div>
         </section>
+        
       </main>
 
       {/* Footer */}
@@ -668,8 +577,14 @@ export default function App() {
           </div>
 
           <p className="text-[9px] uppercase font-black tracking-widest text-slate-600">
-            © 2026 Rolo Quiñones Art.Lab — All Rights Reserved.
+            © 2026 Rolo Quiñones. Todos los derechos reservados.
           </p>
+
+          <div className="flex gap-6">
+            <a href="https://instagram.com/rolo_acuarelas" target="_blank" rel="noreferrer" className="text-slate-600 hover:text-white transition-colors">
+              <Instagram className="w-5 h-5" />
+            </a>
+          </div>
         </div>
       </footer>
     </div>
