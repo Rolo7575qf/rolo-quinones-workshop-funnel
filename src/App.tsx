@@ -119,7 +119,14 @@ export default function App() {
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
-    return (
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const handlePurchase = () => {
+    window.open('https://pay.hotmart.com/U99377775X?off=zcbvhlbz', '_blank');
+  };
+
+  return (
     <div className="min-h-screen bg-[#0A0A0B] text-white font-sans selection:bg-neon-emerald/30 overflow-x-hidden">
       {/* Background Glows */}
       <div className="fixed top-0 left-0 w-full h-full pointer-events-none z-0 overflow-hidden">
