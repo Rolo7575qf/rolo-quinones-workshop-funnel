@@ -63,6 +63,10 @@ const FAQ = [
   {
     q: "¿Cómo accedo al workshop y la comunidad?",
     a: "Al inscribirte recibirás acceso inmediato a una plataforma privada (Hotmart) donde estarán los bonos, los enlaces para las sesiones en vivo y el acceso a nuestra comunidad."
+  },
+  {
+    q: "¿Cuándo son las sesiones?",
+    a: "Nos reuniremos en vivo los días 20, 21 y 22 de mayo, de 19:30 a 21:30 (hora Chile). Si no puedes asistir, las grabaciones estarán disponibles para ti de por vida."
   }
 ];
 
@@ -197,7 +201,7 @@ export default function App() {
                 </button>
                 <p className="text-[10px] text-slate-500 uppercase tracking-widest font-black mt-2">
                   <span className="inline-block w-2 h-2 rounded-full bg-neon-orange animate-pulse mr-2"></span>
-                  Inscripciones Abiertas • Solo 15 cupos
+                  Inscripciones Abiertas • Iniciamos el 20 de Mayo • Solo 15 cupos
                 </p>
               </div>
             </motion.div>
@@ -336,7 +340,8 @@ export default function App() {
                     </div>
                     <div>
                       <h5 className="text-xl font-bold mb-2">3 Sesiones EN VIVO junto a Rolo</h5>
-                      <p className="text-slate-400 font-light text-sm">Donde pintarás paso a paso acompañado personalmente. No estarás solo.</p>
+                      <p className="text-slate-400 font-light text-sm mb-2">20, 21 y 22 de mayo | 19:30 a 21:30 hora Chile.</p>
+                      <p className="text-slate-400 font-light text-sm italic">Pintarás paso a paso acompañado personalmente. No estarás solo.</p>
                     </div>
                   </div>
                   
