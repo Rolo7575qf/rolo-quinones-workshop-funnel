@@ -123,8 +123,12 @@ export default function App() {
       <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${isScrolled ? "bg-black/80 backdrop-blur-2xl py-4 border-b border-white/5" : "bg-transparent py-8"}`}>
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           <div className="flex items-center gap-4 group cursor-pointer">
-             <div className="text-2xl font-display font-black tracking-tighter uppercase">
-              Rolo<span className="text-neon-orange">Quiñones</span>
+            <div className="text-xl md:text-2xl font-display font-black tracking-tighter uppercase flex items-center gap-2 md:gap-4">
+              <span className="hidden sm:inline opacity-50 font-medium">Despierta tu Artista</span>
+              <span className="hidden sm:inline opacity-20">|</span>
+              <div>
+                Rolo<span className="text-neon-orange">Quiñones</span>
+              </div>
             </div>
           </div>
           
@@ -541,8 +545,12 @@ export default function App() {
       {/* Footer */}
       <footer className="py-20 border-t border-white/5 bg-black pb-32 md:pb-20">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-10">
-          <div className="text-2xl font-display font-black tracking-tighter uppercase">
-            Rolo<span className="text-neon-orange">Quiñones</span>
+          <div className="text-xl md:text-2xl font-display font-black tracking-tighter uppercase flex items-center gap-4">
+            <span className="hidden sm:inline opacity-50 font-medium">Despierta tu Artista</span>
+            <span className="hidden sm:inline opacity-20">|</span>
+            <div>
+              Rolo<span className="text-neon-orange">Quiñones</span>
+            </div>
           </div>
 
           <p className="text-[9px] uppercase font-black tracking-widest text-slate-600">
