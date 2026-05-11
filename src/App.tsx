@@ -218,7 +218,7 @@ export default function App() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.2 }}
-              className="relative hidden lg:block"
+              className="relative mt-12 lg:mt-0"
             >
               <div className="absolute inset-0 z-0 flex items-center justify-center">
                 <div className="w-[120%] h-[120%] border border-white/5 rounded-full orbit-item"></div>
