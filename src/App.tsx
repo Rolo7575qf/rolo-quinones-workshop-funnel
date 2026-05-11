@@ -44,7 +44,7 @@ const GALLERY = [
   { id: 3, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1774402778/IMG_20260310_161727918_AE_1_-_copia.jpg", title: "Atmósfera Urbana" },
   { id: 4, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1774402877/Sierra_India_-_copia.jpg", title: "Sierra India" },
   { id: 5, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1774572108/Valle_en_Inverno.jpg", title: "Valle en Invierno" },
-  { id: 6, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1778088669/Cambrich_1.jpg", title: "Cambridge" }
+  { id: 6, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1774402966/IMG_20260209_154148625_AE.jpg", title: "Cambridge" }
 ];
 
 const FAQ = [
