@@ -538,7 +538,7 @@ export default function App() {
         </section>
 
         {/* PINTANDO EN TERRENO */}
-        <section className="py-32 bg-white/[0.02] text-white overflow-hidden border-b border-white/5 hidden md:block">
+        <section className="py-32 bg-white/[0.02] text-white overflow-hidden border-b border-white/5">
           <div className="max-w-7xl mx-auto px-6">
             <SectionTitle subtitle="En Terreno" accent="emerald">Pintando alrededor del mundo</SectionTitle>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
