@@ -402,7 +402,7 @@ export default function App() {
                   >
                     Quiero mi lugar en el grupo pionero
                   </button>
-                  <p className="text-[10px] text-slate-500 uppercase tracking-widest font-black mt-4 relative z-10">Pago único y seguro.</p>
+                  <p className="text-[10px] text-slate-500 uppercase tracking-widest font-black mt-4 relative z-10">Pago único y seguro. <span className="text-neon-orange ml-2">Paga en tu moneda local.</span></p>
                 </div>
               </div>
             </div>
