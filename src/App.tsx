@@ -66,7 +66,7 @@ const FAQ = [
   },
   {
     q: "¿Cuándo son las sesiones?",
-    a: "Nos reuniremos en vivo los días 20, 21 y 22 de mayo, de 19:30 a 21:30 (hora Chile). Si no puedes asistir, las grabaciones estarán disponibles para ti de por vida."
+    a: "Nos reuniremos en vivo los días 28, 29 y 30 de mayo, de 19:30 a 21:30 (hora Chile). Si no puedes asistir, las grabaciones estarán disponibles para ti de por vida."
   }
 ];
 
@@ -205,7 +205,7 @@ export default function App() {
                 </button>
                 <p className="text-[10px] text-slate-500 uppercase tracking-widest font-black mt-2">
                   <span className="inline-block w-2 h-2 rounded-full bg-neon-orange animate-pulse mr-2"></span>
-                  Inscripciones Abiertas • Iniciamos el 20 de Mayo • Solo 15 cupos
+                  Inscripciones Abiertas • Iniciamos el 28 de Mayo • Solo 15 cupos
                 </p>
               </div>
             </motion.div>
@@ -344,7 +344,7 @@ export default function App() {
                     </div>
                     <div>
                       <h5 className="text-xl font-bold mb-2">3 Sesiones Online (vía Zoom)</h5>
-                      <p className="text-slate-400 font-light text-sm mb-2">En vivo los días 20, 21 y 22 de mayo | 19:30 a 21:30 hora Chile.</p>
+                      <p className="text-slate-400 font-light text-sm mb-2">En vivo los días 28, 29 y 30 de mayo | 19:30 a 21:30 hora Chile.</p>
                       <p className="text-slate-400 font-light text-sm italic">Pintarás paso a paso acompañado personalmente. No estarás solo.</p>
                     </div>
                   </div>
@@ -558,9 +558,6 @@ export default function App() {
           </p>
 
           <div className="flex gap-6">
-            <a href="https://instagram.com/rolo_acuarelas" target="_blank" rel="noreferrer" className="text-slate-600 hover:text-white transition-colors">
-              <Instagram className="w-5 h-5" />
-            </a>
           </div>
         </div>
       </footer>
