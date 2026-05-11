@@ -78,9 +78,9 @@ const FAQ = [
 
 const SectionTitle = ({ children, subtitle, accent = "emerald" }: { children: React.ReactNode, subtitle?: string, accent?: "emerald" | "amber" | "rose" }) => {
   const accentColors = {
-    emerald: "text-neon-orange drop-shadow-[0_0_8px_rgba(255,85,0,0.4)]",
-    amber: "text-neon-amber drop-shadow-[0_0_8px_rgba(245,158,11,0.4)]",
-    rose: "text-rose-500 drop-shadow-[0_0_8px_rgba(244,63,94,0.4)]"
+    emerald: "text-neon-orange drop-shadow-[0_0_12px_rgba(255,115,0,0.5)]",
+    amber: "text-neon-amber drop-shadow-[0_0_12px_rgba(245,158,11,0.5)]",
+    rose: "text-rose-500 drop-shadow-[0_0_12px_rgba(244,63,94,0.5)]"
   };
 
   return (
@@ -140,7 +140,7 @@ export default function App() {
             <a href="#programa" className="hover:text-neon-orange transition-colors">Workshop</a>
             <button 
               onClick={handlePurchase}
-              className="px-8 py-3 bg-white text-black rounded-full hover:bg-neon-orange hover:text-black transition-all font-black text-[9px] uppercase tracking-widest shadow-[0_0_20px_rgba(255,255,255,0.1)]"
+              className="px-8 py-3 bg-neon-orange text-black rounded-full hover:bg-white transition-all font-black text-[9px] uppercase tracking-widest shadow-[0_0_20px_rgba(255,115,0,0.3)]"
             >
               Sí, quiero atreverme
             </button>
@@ -203,7 +203,7 @@ export default function App() {
               <div className="flex flex-col gap-4 items-start">
                 <button 
                   onClick={handlePurchase}
-                  className="px-10 md:px-12 py-6 bg-neon-orange text-black rounded-full text-xs font-black uppercase tracking-widest shadow-[0_10px_40px_rgba(0,255,157,0.2)] hover:shadow-[0_20px_60px_rgba(0,255,157,0.4)] hover:-translate-y-1 transition-all animate-shine"
+                  className="px-10 md:px-12 py-6 bg-neon-orange text-black rounded-full text-xs font-black uppercase tracking-widest shadow-[0_10px_40px_rgba(255,115,0,0.3)] hover:shadow-[0_20px_60px_rgba(255,115,0,0.5)] hover:bg-white hover:-translate-y-1 transition-all animate-shine"
                 >
                   Hoy decido empezar
                 </button>
@@ -223,7 +223,7 @@ export default function App() {
               <div className="absolute inset-0 z-0 flex items-center justify-center">
                 <div className="w-[120%] h-[120%] border border-white/5 rounded-full orbit-item"></div>
               </div>
-              <div className="relative z-10 w-full max-w-sm mx-auto aspect-[9/16] rounded-[40px] overflow-hidden shadow-[0_0_50px_rgba(0,255,157,0.1)] neon-border-emerald group">
+              <div className="relative z-10 w-full max-w-sm mx-auto aspect-[9/16] rounded-[40px] overflow-hidden shadow-[0_0_50px_rgba(255,115,0,0.15)] neon-border-emerald group">
                   <iframe 
                     width="100%" 
                     height="100%" 
@@ -312,7 +312,7 @@ export default function App() {
                   <div className="pt-8">
                     <button 
                       onClick={handlePurchase}
-                      className="text-neon-orange hover:text-white transition-colors uppercase tracking-[0.3em] font-bold text-[10px] pb-2 border-b border-neon-orange/30 hover:border-white"
+                      className="px-8 py-4 bg-neon-orange text-black rounded-full text-[10px] font-black uppercase tracking-[0.3em] shadow-[0_10px_30px_rgba(255,115,0,0.2)] hover:bg-white transition-all"
                     >
                       Quiero dar el primer paso
                     </button>
@@ -388,7 +388,7 @@ export default function App() {
                 </div>
 
                 {/* PRECIO */}
-                <div className="p-10 rounded-[40px] border border-neon-orange/30 bg-neon-orange/5 shadow-[0_0_50px_rgba(0,255,157,0.05)] text-center relative overflow-hidden">
+                <div className="p-10 rounded-[40px] border border-neon-orange/30 bg-neon-orange/5 shadow-[0_0_50px_rgba(255,115,0,0.1)] text-center relative overflow-hidden">
                   <div className="absolute -top-20 -right-20 w-40 h-40 bg-neon-orange/20 blur-[50px] rounded-full"></div>
                   <h4 className="text-xl font-display font-bold mb-2 text-white relative z-10">Esto puede acompañarte toda la vida.</h4>
                   <p className="text-xs text-neon-orange uppercase tracking-widest font-black mb-4 relative z-10 mt-6">Grabaciones disponibles por 1 mes</p>
@@ -398,7 +398,7 @@ export default function App() {
                   </div>
                   <button 
                     onClick={handlePurchase}
-                    className="w-full py-5 bg-white text-black rounded-full text-xs font-black uppercase tracking-widest shadow-2xl hover:bg-neon-orange hover:text-black transition-all relative z-10"
+                    className="w-full py-5 bg-white text-black rounded-full text-[10px] font-black uppercase tracking-widest shadow-2xl hover:bg-neon-orange transition-all relative z-10"
                   >
                     Quiero mi lugar en el grupo pionero
                   </button>
@@ -576,7 +576,7 @@ export default function App() {
             
             <button 
               onClick={handlePurchase}
-              className="px-14 py-7 bg-white text-black rounded-full text-sm font-black uppercase tracking-widest shadow-[0_20px_60px_rgba(255,255,255,0.1)] hover:bg-neon-orange hover:-translate-y-1 transition-all animate-shine mb-6"
+              className="px-14 py-7 bg-neon-orange text-black rounded-full text-sm font-black uppercase tracking-widest shadow-[0_20px_60px_rgba(255,115,0,0.3)] hover:bg-white hover:-translate-y-1 transition-all animate-shine mb-6"
             >
               Sí, quiero atreverme
             </button>
@@ -615,7 +615,7 @@ export default function App() {
           </div>
           <button 
             onClick={handlePurchase}
-            className="px-6 py-3 bg-white text-black rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg hover:bg-neon-orange transition-colors"
+            className="px-6 py-3 bg-neon-orange text-black rounded-full text-[10px] font-black uppercase tracking-widest shadow-[0_5px_15px_rgba(255,115,0,0.3)] hover:bg-white transition-all"
           >
             Comenzar
           </button>
