@@ -245,7 +245,6 @@ export default function App() {
               <span className="flex items-center gap-2"><Video className="w-4 h-4 text-neon-orange"/> 3 Sesiones Online (Zoom)</span>
               <span className="flex items-center gap-2"><Users className="w-4 h-4 text-neon-orange"/> Grupo Reducido</span>
               <span className="flex items-center gap-2"><Award className="w-4 h-4 text-neon-amber"/> Curso Bonus</span>
-              <span className="flex items-center gap-2 text-white"><Sparkles className="w-4 h-4 text-neon-orange"/> Acceso: 147 USD</span>
             </div>
           </div>
         </section>
