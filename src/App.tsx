@@ -251,7 +251,7 @@ export default function App() {
 
         {/* MICRO-REFLEXIÓN 1 */}
         <div className="py-20 text-center">
-          <p className="text-slate-500 italic font-display text-2xl opacity-60">¿Hace cuánto tiempo llevas ignorando esa parte de ti?</p>
+          <p className="text-slate-300 italic font-display text-2xl opacity-90">¿Hace cuánto tiempo llevas ignorando esa parte de ti?</p>
         </div>
 
         {/* EL DOLOR SILENCIOSO */}
@@ -324,7 +324,7 @@ export default function App() {
 
         {/* MICRO-REFLEXIÓN 2 */}
         <div className="py-20 text-center bg-black">
-          <p className="text-slate-500 italic font-display text-2xl opacity-60">¿Y si esta vez fuera diferente?</p>
+          <p className="text-slate-300 italic font-display text-2xl opacity-90">¿Y si esta vez fuera diferente?</p>
         </div>
 
         {/* PRESENTACIÓN DEL WORKSHOP */}
