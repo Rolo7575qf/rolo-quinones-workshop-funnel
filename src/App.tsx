@@ -224,15 +224,15 @@ export default function App() {
                 <div className="w-[120%] h-[120%] border border-white/5 rounded-full orbit-item"></div>
               </div>
               <div className="relative z-10 w-full max-w-sm mx-auto aspect-[9/16] rounded-[40px] overflow-hidden shadow-[0_0_50px_rgba(255,115,0,0.15)] neon-border-emerald group">
-                  <iframe 
-                    width="100%" 
-                    height="100%" 
-                    src="https://www.youtube.com/embed/ykAVF2wwZPo?rel=0"
-                    title="Rolo Quiñones" 
-                    frameBorder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    allowFullScreen>
-                  </iframe>
+                  <video 
+                    controls 
+                    playsInline
+                    className="w-full h-full object-cover"
+                    src="https://res.cloudinary.com/diqwlgqig/video/upload/v1778534106/VID_20260511_140707_037_bsl8381257205023838726_2.mp4"
+                    title="Rolo Quiñones"
+                  >
+                    Tu navegador no soporta la reproducción de video.
+                  </video>
               </div>
             </motion.div>
           </div>
