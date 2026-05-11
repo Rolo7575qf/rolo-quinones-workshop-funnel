@@ -78,9 +78,9 @@ const FAQ = [
 
 const SectionTitle = ({ children, subtitle, accent = "emerald" }: { children: React.ReactNode, subtitle?: string, accent?: "emerald" | "amber" | "rose" }) => {
   const accentColors = {
-    emerald: "text-neon-orange",
-    amber: "text-neon-amber",
-    rose: "text-rose-500"
+    emerald: "text-neon-orange drop-shadow-[0_0_8px_rgba(255,85,0,0.4)]",
+    amber: "text-neon-amber drop-shadow-[0_0_8px_rgba(245,158,11,0.4)]",
+    rose: "text-rose-500 drop-shadow-[0_0_8px_rgba(244,63,94,0.4)]"
   };
 
   return (
@@ -191,7 +191,7 @@ export default function App() {
                 <span className="w-12 h-[1px] bg-neon-orange"></span>
                 <span className="text-neon-orange text-[9px] font-black uppercase tracking-[0.5em]">El Despertar del Artista</span>
               </div>
-              <h1 className="text-4xl md:text-6xl lg:text-[4rem] font-display font-bold tracking-tighter leading-[1.1] mb-8">
+              <h1 className="text-4xl md:text-6xl lg:text-[4rem] font-display font-bold tracking-tighter leading-[1.1] mb-8 text-glow-emerald">
                 ¿Y si todavía no es demasiado tarde para convertirte en artista?
               </h1>
               
