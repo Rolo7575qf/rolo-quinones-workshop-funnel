@@ -1,4 +1,6 @@
-/**
+import re
+
+new_content = """/**
  * @license
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -57,20 +59,12 @@ const FAQ = [
     a: "Un par de pinceles, papel de acuarela básico y pigmentos. No necesitas las marcas más caras para comenzar. Al inscribirte, te enviaré mi lista de recomendaciones."
   },
   {
-    q: "¿Cómo accedo al workshop y la comunidad?",
-    a: "Al inscribirte, recibirás un enlace para unirte a nuestro grupo exclusivo de WhatsApp. Por ese medio enviaremos los enlaces de Zoom para las sesiones en vivo. Además, el acceso a nuestra comunidad exclusiva se gestionará a través de un grupo privado de Instagram."
-  },
-  {
     q: "¿Las sesiones quedan grabadas?",
-    a: "Sí. Entiendo que a veces la vida se interpone. Tendrás acceso a las grabaciones durante 1 mes para que repitas la experiencia a tu ritmo."
+    a: "Sí. Entiendo que a veces la vida se interpone. Tendrás acceso de por vida a las grabaciones para que repitas la experiencia cuando quieras."
   },
   {
-    q: "¿Cuándo son las sesiones?",
-    a: "Nos reuniremos en vivo los días 28, 29 y 30 de mayo, de 19:30 a 21:30 (hora Chile). Las grabaciones estarán disponibles para ti durante 1 mes."
-  },
-  {
-    q: "¿Cuáles son los horarios para mi país?",
-    a: "Las sesiones inician a las 19:30 hora Chile. Aquí tienes la conversión: Argentina y Brasil (20:30), Perú y Colombia (18:30), México CDMX (17:30)."
+    q: "¿Cómo accedo al workshop y la comunidad?",
+    a: "Al inscribirte recibirás acceso inmediato a una plataforma privada (Hotmart) donde estarán los bonos, los enlaces para las sesiones en vivo y el acceso a nuestra comunidad."
   }
 ];
 
@@ -78,7 +72,7 @@ const FAQ = [
 
 const SectionTitle = ({ children, subtitle, accent = "emerald" }: { children: React.ReactNode, subtitle?: string, accent?: "emerald" | "amber" | "rose" }) => {
   const accentColors = {
-    emerald: "text-neon-orange",
+    emerald: "text-neon-emerald",
     amber: "text-neon-amber",
     rose: "text-rose-500"
   };
@@ -116,10 +110,10 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0A0A0B] text-white font-sans selection:bg-neon-orange/30 overflow-x-hidden pb-20 md:pb-0">
+    <div className="min-h-screen bg-[#0A0A0B] text-white font-sans selection:bg-neon-emerald/30 overflow-x-hidden pb-20 md:pb-0">
       {/* Background Glows */}
       <div className="fixed top-0 left-0 w-full h-full pointer-events-none z-0 overflow-hidden">
-        <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-neon-orange/5 rounded-full blur-[120px]"></div>
+        <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-neon-emerald/5 rounded-full blur-[120px]"></div>
         <div className="absolute bottom-[-10%] left-[-10%] w-[50%] h-[50%] bg-neon-amber/5 rounded-full blur-[120px]"></div>
       </div>
 
@@ -127,20 +121,16 @@ export default function App() {
       <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${isScrolled ? "bg-black/80 backdrop-blur-2xl py-4 border-b border-white/5" : "bg-transparent py-8"}`}>
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           <div className="flex items-center gap-4 group cursor-pointer">
-            <div className="text-xl md:text-2xl font-display font-black tracking-tighter uppercase flex items-center gap-2 md:gap-4">
-              <span className="hidden sm:inline opacity-50 font-medium">Despierta tu Artista</span>
-              <span className="hidden sm:inline opacity-20">|</span>
-              <div>
-                Rolo<span className="text-neon-orange">Quiñones</span>
-              </div>
+             <div className="text-2xl font-display font-black tracking-tighter uppercase">
+              Rolo<span className="text-neon-emerald">Quiñones</span>
             </div>
           </div>
           
           <div className="hidden md:flex items-center gap-10 text-[10px] uppercase tracking-[0.3em] font-bold">
-            <a href="#programa" className="hover:text-neon-orange transition-colors">Workshop</a>
+            <a href="#programa" className="hover:text-neon-emerald transition-colors">Workshop</a>
             <button 
               onClick={handlePurchase}
-              className="px-8 py-3 bg-white text-black rounded-full hover:bg-neon-orange hover:text-black transition-all font-black text-[9px] uppercase tracking-widest shadow-[0_0_20px_rgba(255,255,255,0.1)]"
+              className="px-8 py-3 bg-white text-black rounded-full hover:bg-neon-emerald hover:text-black transition-all font-black text-[9px] uppercase tracking-widest shadow-[0_0_20px_rgba(255,255,255,0.1)]"
             >
               Sí, quiero atreverme
             </button>
@@ -168,7 +158,7 @@ export default function App() {
                   setIsMenuOpen(false);
                   handlePurchase();
                 }}
-                className="w-full py-5 bg-neon-orange text-black rounded-full text-sm font-black uppercase tracking-widest"
+                className="w-full py-5 bg-neon-emerald text-black rounded-full text-sm font-black uppercase tracking-widest"
               >
                 Sí, quiero atreverme
               </button>
@@ -188,8 +178,8 @@ export default function App() {
               transition={{ duration: 0.8 }}
             >
               <div className="flex flex-wrap items-center gap-4 mb-8">
-                <span className="w-12 h-[1px] bg-neon-orange"></span>
-                <span className="text-neon-orange text-[9px] font-black uppercase tracking-[0.5em]">El Despertar del Artista</span>
+                <span className="w-12 h-[1px] bg-neon-emerald"></span>
+                <span className="text-neon-emerald text-[9px] font-black uppercase tracking-[0.5em]">El Despertar del Artista</span>
               </div>
               <h1 className="text-4xl md:text-6xl lg:text-[4rem] font-display font-bold tracking-tighter leading-[1.1] mb-8">
                 ¿Y si todavía no es demasiado tarde para convertirte en artista?
@@ -203,13 +193,13 @@ export default function App() {
               <div className="flex flex-col gap-4 items-start">
                 <button 
                   onClick={handlePurchase}
-                  className="px-10 md:px-12 py-6 bg-neon-orange text-black rounded-full text-xs font-black uppercase tracking-widest shadow-[0_10px_40px_rgba(0,255,157,0.2)] hover:shadow-[0_20px_60px_rgba(0,255,157,0.4)] hover:-translate-y-1 transition-all animate-shine"
+                  className="px-10 md:px-12 py-6 bg-neon-emerald text-black rounded-full text-xs font-black uppercase tracking-widest shadow-[0_10px_40px_rgba(0,255,157,0.2)] hover:shadow-[0_20px_60px_rgba(0,255,157,0.4)] hover:-translate-y-1 transition-all animate-shine"
                 >
                   Hoy decido empezar
                 </button>
                 <p className="text-[10px] text-slate-500 uppercase tracking-widest font-black mt-2">
-                  <span className="inline-block w-2 h-2 rounded-full bg-neon-orange animate-pulse mr-2"></span>
-                  Inscripciones Abiertas • Iniciamos el 28 de Mayo • Solo 15 cupos
+                  <span className="inline-block w-2 h-2 rounded-full bg-neon-emerald animate-pulse mr-2"></span>
+                  Inscripciones Abiertas • Solo 15 cupos
                 </p>
               </div>
             </motion.div>
@@ -242,10 +232,10 @@ export default function App() {
         <section className="py-8 bg-white/[0.02] border-y border-white/5">
           <div className="max-w-7xl mx-auto px-6">
             <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-4 text-xs font-black tracking-widest uppercase text-slate-400">
-              <span className="flex items-center gap-2"><Video className="w-4 h-4 text-neon-orange"/> 3 Sesiones Online (Zoom)</span>
-              <span className="flex items-center gap-2"><Users className="w-4 h-4 text-neon-orange"/> Grupo Reducido</span>
+              <span className="flex items-center gap-2"><Video className="w-4 h-4 text-neon-emerald"/> 3 Sesiones en Vivo</span>
+              <span className="flex items-center gap-2"><Users className="w-4 h-4 text-neon-emerald"/> Grupo Reducido</span>
               <span className="flex items-center gap-2"><Award className="w-4 h-4 text-neon-amber"/> Curso Bonus</span>
-              <span className="flex items-center gap-2 text-white"><Sparkles className="w-4 h-4 text-neon-orange"/> Acceso: 147 USD</span>
+              <span className="flex items-center gap-2 text-white"><Sparkles className="w-4 h-4 text-neon-emerald"/> Acceso: 147 USD</span>
             </div>
           </div>
         </section>
@@ -291,7 +281,7 @@ export default function App() {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="order-2 lg:order-1">
                 <div className="aspect-[4/5] w-full max-w-md mx-auto rounded-[40px] overflow-hidden border border-white/10 relative shadow-2xl">
-                  <img src="https://res.cloudinary.com/diqwlgqig/image/upload/v1778459838/Screenshot_20260503-222224.png" alt="Rolo pintando en el taller" className="w-full h-full object-cover grayscale brightness-75 hover:grayscale-0 hover:brightness-100 transition-all duration-700" />
+                  <img src="https://res.cloudinary.com/diqwlgqig/image/upload/v1774398410/Rolo%20_Historia.jpg" alt="Rolo pintando en el taller" className="w-full h-full object-cover grayscale brightness-75 hover:grayscale-0 hover:brightness-100 transition-all duration-700" />
                 </div>
                 <p className="text-center text-slate-500 text-sm italic mt-6">A veces, el primer trazo es el más difícil.</p>
               </motion.div>
@@ -302,7 +292,7 @@ export default function App() {
                   <p>Desde niño, el olor a óleo en el taller de mi abuelo se quedó grabado dentro de mí. Lo veía pintar y pensaba: <span className="italic">“Él tiene un don. Yo no nací para eso.”</span></p>
                   <p>Hasta que llegó el año 2020. El mundo se detuvo... y por primera vez tuve que mirar de frente todo lo que llevaba años postergando. Ahí entendí algo que cambió mi vida:</p>
                   
-                  <div className="py-6 border-l-2 border-neon-orange/50 pl-6 my-8">
+                  <div className="py-6 border-l-2 border-neon-emerald/50 pl-6 my-8">
                     <h3 className="text-2xl font-display text-white font-bold mb-4">La acuarela no se trata de pintar perfecto. Se trata de atreverse a sentir.</h3>
                   </div>
 
@@ -312,7 +302,7 @@ export default function App() {
                   <div className="pt-8">
                     <button 
                       onClick={handlePurchase}
-                      className="text-neon-orange hover:text-white transition-colors uppercase tracking-[0.3em] font-bold text-[10px] pb-2 border-b border-neon-orange/30 hover:border-white"
+                      className="text-neon-emerald hover:text-white transition-colors uppercase tracking-[0.3em] font-bold text-[10px] pb-2 border-b border-neon-emerald/30 hover:border-white"
                     >
                       Quiero dar el primer paso
                     </button>
@@ -333,23 +323,22 @@ export default function App() {
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center max-w-3xl mx-auto mb-20">
               <h2 className="text-4xl md:text-6xl font-display font-bold mb-6">Esto no es un curso más.</h2>
-              <h3 className="text-2xl md:text-4xl font-display text-neon-orange">Es una experiencia de transformación.</h3>
+              <h3 className="text-2xl md:text-4xl font-display text-neon-emerald">Es una experiencia de transformación.</h3>
             </div>
             
             <div className="grid md:grid-cols-2 gap-16 items-start">
               <div>
                 <div className="p-10 rounded-[40px] glass-vanguard border border-white/5 shadow-2xl relative overflow-hidden">
-                  <div className="absolute top-0 right-0 p-8 opacity-10"><Palette className="w-32 h-32 text-neon-orange" /></div>
+                  <div className="absolute top-0 right-0 p-8 opacity-10"><Palette className="w-32 h-32 text-neon-emerald" /></div>
                   <h4 className="text-3xl font-display font-bold mb-8 relative z-10">¿Qué Incluye?</h4>
                   
                   <div className="flex items-start gap-6 mb-8 relative z-10">
-                    <div className="w-12 h-12 rounded-full bg-neon-orange/20 flex items-center justify-center shrink-0 border border-neon-orange/30">
-                      <Calendar className="w-5 h-5 text-neon-orange" />
+                    <div className="w-12 h-12 rounded-full bg-neon-emerald/20 flex items-center justify-center shrink-0 border border-neon-emerald/30">
+                      <Calendar className="w-5 h-5 text-neon-emerald" />
                     </div>
                     <div>
-                      <h5 className="text-xl font-bold mb-2">3 Sesiones Online (vía Zoom)</h5>
-                      <p className="text-slate-400 font-light text-sm mb-2">En vivo los días 28, 29 y 30 de mayo | 19:30 a 21:30 hora Chile.</p>
-                      <p className="text-slate-400 font-light text-sm italic">Pintarás paso a paso acompañado personalmente. No estarás solo.</p>
+                      <h5 className="text-xl font-bold mb-2">3 Sesiones EN VIVO junto a Rolo</h5>
+                      <p className="text-slate-400 font-light text-sm">Donde pintarás paso a paso acompañado personalmente. No estarás solo.</p>
                     </div>
                   </div>
                   
@@ -384,21 +373,21 @@ export default function App() {
                   <p className="text-slate-300 font-light mb-4 text-sm leading-relaxed">
                     No quiero crear un curso masivo. Quiero conocer tu proceso, ver tus avances y ayudarte personalmente a desbloquear tu creatividad. Por eso los cupos son limitados a 15 personas.
                   </p>
-                  <p className="text-neon-orange font-display italic text-lg">Este será el comienzo de una comunidad artística real.</p>
+                  <p className="text-neon-emerald font-display italic text-lg">Este será el comienzo de una comunidad artística real.</p>
                 </div>
 
                 {/* PRECIO */}
-                <div className="p-10 rounded-[40px] border border-neon-orange/30 bg-neon-orange/5 shadow-[0_0_50px_rgba(0,255,157,0.05)] text-center relative overflow-hidden">
-                  <div className="absolute -top-20 -right-20 w-40 h-40 bg-neon-orange/20 blur-[50px] rounded-full"></div>
+                <div className="p-10 rounded-[40px] border border-neon-emerald/30 bg-neon-emerald/5 shadow-[0_0_50px_rgba(0,255,157,0.05)] text-center relative overflow-hidden">
+                  <div className="absolute -top-20 -right-20 w-40 h-40 bg-neon-emerald/20 blur-[50px] rounded-full"></div>
                   <h4 className="text-xl font-display font-bold mb-2 text-white relative z-10">Esto puede acompañarte toda la vida.</h4>
-                  <p className="text-xs text-neon-orange uppercase tracking-widest font-black mb-4 relative z-10 mt-6">Grabaciones disponibles por 1 mes</p>
+                  <p className="text-xs text-neon-emerald uppercase tracking-widest font-black mb-4 relative z-10 mt-6">Acceso completo de por vida</p>
                   <div className="flex justify-center items-baseline gap-2 mb-8 relative z-10">
-                    <span className="text-xl font-display font-bold text-neon-orange/50">USD</span>
+                    <span className="text-xl font-display font-bold text-neon-emerald/50">USD</span>
                     <span className="text-7xl font-display font-black tracking-tighter text-white">147</span>
                   </div>
                   <button 
                     onClick={handlePurchase}
-                    className="w-full py-5 bg-white text-black rounded-full text-xs font-black uppercase tracking-widest shadow-2xl hover:bg-neon-orange hover:text-black transition-all relative z-10"
+                    className="w-full py-5 bg-white text-black rounded-full text-xs font-black uppercase tracking-widest shadow-2xl hover:bg-neon-emerald hover:text-black transition-all relative z-10"
                   >
                     Quiero mi lugar en el grupo pionero
                   </button>
@@ -429,7 +418,7 @@ export default function App() {
               Alguien llega a tu casa, mira la pared del pasillo, y te pregunta:<br/><br/>
               <span className="text-white font-bold">"¿Tú pintaste eso?"</span><br/><br/>
               Y tú sonríes, respiras profundo, y respondes:<br/><br/>
-              <span className="text-neon-orange font-display text-4xl">"Sí."</span>
+              <span className="text-neon-emerald font-display text-4xl">"Sí."</span>
             </p>
           </div>
         </section>
@@ -463,7 +452,7 @@ export default function App() {
                     className="w-full flex items-center justify-between p-6 text-left hover:bg-white/[0.02] transition-colors"
                   >
                     <span className="font-bold text-white pr-4">{item.q}</span>
-                    <ChevronDown className={`w-5 h-5 text-neon-orange transition-transform duration-300 ${openFaq === idx ? 'rotate-180' : ''}`} />
+                    <ChevronDown className={`w-5 h-5 text-neon-emerald transition-transform duration-300 ${openFaq === idx ? 'rotate-180' : ''}`} />
                   </button>
                   <AnimatePresence>
                     {openFaq === idx && (
@@ -488,53 +477,13 @@ export default function App() {
         {/* GARANTÍA */}
         <section className="py-24 bg-black border-y border-white/5">
           <div className="max-w-3xl mx-auto px-6 text-center">
-            <div className="w-16 h-16 mx-auto bg-neon-orange/10 rounded-full flex items-center justify-center mb-6">
-              <Shield className="w-8 h-8 text-neon-orange" />
+            <div className="w-16 h-16 mx-auto bg-neon-emerald/10 rounded-full flex items-center justify-center mb-6">
+              <Shield className="w-8 h-8 text-neon-emerald" />
             </div>
             <h2 className="text-3xl font-display font-bold mb-6">Garantía de Paz Mental</h2>
             <p className="text-lg text-slate-300 font-light leading-relaxed mb-6">
               Quiero que tomes esta decisión desde la ilusión, no desde la presión. Únete a nuestra primera sesión en vivo. Conoce el método y pinta con nosotros. Si al terminar sientes que este espacio no es lo que buscabas, te devolveré el 100% de tu inversión. Riesgo cero.
             </p>
-          </div>
-        </section>
-
-        {/* ÚLTIMAS OBRAS BANNER */}
-        <section className="py-32 bg-black overflow-hidden border-t border-white/5">
-          <div className="max-w-7xl mx-auto px-6">
-            <SectionTitle subtitle="Portafolio" accent="amber">Últimas Obras</SectionTitle>
-            
-            <div className="relative">
-              <div className="flex gap-6 overflow-x-auto pb-12 snap-x no-scrollbar">
-                {[...GALLERY].reverse().map((item) => (
-                  <motion.div 
-                    key={item.id}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="min-w-[300px] md:min-w-[450px] snap-center"
-                  >
-                    <div className="aspect-[4/5] rounded-[32px] overflow-hidden border border-white/10 group relative">
-                      <img 
-                        src={item.url} 
-                        alt={item.title} 
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                        referrerPolicy="no-referrer"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                        <p className="text-white font-display text-2xl italic">{item.title}</p>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-              
-              {/* Scroll Indicator */}
-              <div className="flex justify-center gap-2 mt-4">
-                {GALLERY.map((_, i) => (
-                  <div key={i} className="w-1.5 h-1.5 rounded-full bg-white/20"></div>
-                ))}
-              </div>
-            </div>
           </div>
         </section>
 
@@ -576,7 +525,7 @@ export default function App() {
             
             <button 
               onClick={handlePurchase}
-              className="px-14 py-7 bg-white text-black rounded-full text-sm font-black uppercase tracking-widest shadow-[0_20px_60px_rgba(255,255,255,0.1)] hover:bg-neon-orange hover:-translate-y-1 transition-all animate-shine mb-6"
+              className="px-14 py-7 bg-white text-black rounded-full text-sm font-black uppercase tracking-widest shadow-[0_20px_60px_rgba(255,255,255,0.1)] hover:bg-neon-emerald hover:-translate-y-1 transition-all animate-shine mb-6"
             >
               Sí, quiero atreverme
             </button>
@@ -589,12 +538,8 @@ export default function App() {
       {/* Footer */}
       <footer className="py-20 border-t border-white/5 bg-black pb-32 md:pb-20">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-10">
-          <div className="text-xl md:text-2xl font-display font-black tracking-tighter uppercase flex items-center gap-4">
-            <span className="hidden sm:inline opacity-50 font-medium">Despierta tu Artista</span>
-            <span className="hidden sm:inline opacity-20">|</span>
-            <div>
-              Rolo<span className="text-neon-orange">Quiñones</span>
-            </div>
+          <div className="text-2xl font-display font-black tracking-tighter uppercase">
+            Rolo<span className="text-neon-emerald">Quiñones</span>
           </div>
 
           <p className="text-[9px] uppercase font-black tracking-widest text-slate-600">
@@ -602,6 +547,9 @@ export default function App() {
           </p>
 
           <div className="flex gap-6">
+            <a href="https://instagram.com/rolo_acuarelas" target="_blank" rel="noreferrer" className="text-slate-600 hover:text-white transition-colors">
+              <Instagram className="w-5 h-5" />
+            </a>
           </div>
         </div>
       </footer>
@@ -611,11 +559,11 @@ export default function App() {
         <div className="bg-black/90 backdrop-blur-xl border border-white/10 p-4 rounded-3xl flex items-center justify-between shadow-2xl">
           <div>
             <p className="text-white font-bold text-sm">Workshop en Vivo</p>
-            <p className="text-neon-orange text-xs font-black uppercase tracking-widest">Cupos Limitados</p>
+            <p className="text-neon-emerald text-xs font-black uppercase tracking-widest">Cupos Limitados</p>
           </div>
           <button 
             onClick={handlePurchase}
-            className="px-6 py-3 bg-white text-black rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg hover:bg-neon-orange transition-colors"
+            className="px-6 py-3 bg-white text-black rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg hover:bg-neon-emerald transition-colors"
           >
             Comenzar
           </button>
@@ -625,3 +573,7 @@ export default function App() {
     </div>
   );
 }
+"""
+
+with open("src/App.tsx", "w", encoding="utf-8") as f:
+    f.write(new_content)
