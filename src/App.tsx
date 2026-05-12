@@ -30,12 +30,77 @@ import {
 // --- Constants & Data ---
 
 const PAINTING_WORLD = [
-  { id: 1, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1778088670/Madrid.jpg", location: "Madrid, España" },
-  { id: 2, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1774399238/Bolsa%20Valparaiso.jpg", location: "Valparaíso, Chile" },
-  { id: 3, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1778088669/Londres.jpg", location: "Londres, Reino Unido" },
-  { id: 4, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1776096698/Rouen___Francia.jpg", location: "Rouen, Francia" },
-  { id: 5, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1778088669/Liverpool.jpg", location: "Liverpool, Reino Unido" },
-  { id: 6, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1774572770/Acuarela_Cesky.jpg", location: "Cesky Krumlov, R. Checa" }
+  { id: 1, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1778616989/482242614_3232707150202662_62567590561808812_n.jpg", location: "Cartagena, Colombia" },
+  { id: 2, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1778616990/487506985_3252359074904136_8367232757280036633_n.jpg", location: "Ushuaia, Argentina" },
+  { id: 3, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1778616991/488427393_3255340687939308_4957167745823050649_n.jpg", location: "Toledo, España" },
+  { id: 4, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1778616991/488383035_3255348174605226_7425598840485360296_n.jpg", location: "Lisboa, Portugal" },
+  { id: 5, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1778616992/491838082_3268679929938717_1501264273516680488_n.jpg", location: "Buenos Aires, Argentina" },
+  { id: 6, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1778616993/500846661_18313080055239353_4556969707055719599_n.png", location: "Sao Paulo, Brasil" },
+  { id: 7, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1778088669/1704126059149.jpg", location: "Tierra del Fuego, Chile" },
+  { id: 8, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1778088669/Londres.jpg", location: "Londres, UK" },
+  { id: 9, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1778088669/Cambrich_1.jpg", location: "Cambridge, UK" },
+  { id: 10, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1778617677/488754438_3255434674596576_946297833519467754_n.jpg", location: "Madrid, España" }
+];
+
+const RECOGNITIONS = [
+  { 
+    org: "IWS Alemania", 
+    competition: "Your Vision of Germany", 
+    work: "Diosa de la Paz" 
+  },
+  { 
+    org: "IWS Chile", 
+    competition: "Visiones Profundas (2022)", 
+    work: "Desierto" 
+  },
+  { 
+    org: "IWS Chile", 
+    competition: "Visiones de Agua (2025)", 
+    work: "Baja Marea" 
+  },
+  { 
+    org: "IWS NFT 2023", 
+    competition: "Pulse and Art", 
+    work: "Neblina" 
+  },
+  { 
+    org: "IWS India", 
+    competition: "2nd Olympiart", 
+    work: "Lake Como" 
+  },
+  { 
+    org: "IWS Turkey", 
+    competition: "The Magic of Watercolor", 
+    work: "Muelle Olvidado" 
+  },
+  { 
+    org: "IWS Ucrania", 
+    competition: "International Watercolor Festival (2023)", 
+    work: "Cabotaje" 
+  },
+  { 
+    org: "IWS Eslovenia", 
+    competition: "Castra 2025", 
+    work: "Grodno" 
+  }
+];
+
+const RECOGNITION_BACKUP_IMAGES = [
+  "https://res.cloudinary.com/diqwlgqig/image/upload/v1778616472/588044015_18337579039239353_2357459514587362843_n.png",
+  "https://res.cloudinary.com/diqwlgqig/image/upload/v1778616471/501489520_18313062565239353_3390195419200206424_n.png",
+  "https://res.cloudinary.com/diqwlgqig/image/upload/v1778616470/493228764_3284816061658437_4926226463327908740_n.jpg",
+  "https://res.cloudinary.com/diqwlgqig/image/upload/v1778616470/490810078_3268150256658351_3225976229132619448_n.jpg",
+  "https://res.cloudinary.com/diqwlgqig/image/upload/v1778616469/490293919_3264761093663934_5898181522884028105_n.jpg",
+  "https://res.cloudinary.com/diqwlgqig/image/upload/v1778616469/490274859_3264550363685007_1903291271374342441_n.jpg",
+  "https://res.cloudinary.com/diqwlgqig/image/upload/v1778616468/489774526_3261868330619877_5809346723347168890_n.jpg",
+  "https://res.cloudinary.com/diqwlgqig/image/upload/v1778616468/489380539_3261005807372796_7536473449387445812_n.jpg",
+  "https://res.cloudinary.com/diqwlgqig/image/upload/v1778616466/488681522_3256355274504516_3377094506686811675_n.jpg",
+  "https://res.cloudinary.com/diqwlgqig/image/upload/v1778616466/487827208_3250376898435687_4863184671056929412_n.jpg",
+  "https://res.cloudinary.com/diqwlgqig/image/upload/v1778616466/487062435_3251322591674451_7656895779983952530_n.jpg",
+  "https://res.cloudinary.com/diqwlgqig/image/upload/v1778616466/486510255_3243882349085142_227779618700529908_n.jpg",
+  "https://res.cloudinary.com/diqwlgqig/image/upload/v1778616466/486603395_3244887878984589_5049718867187924332_n.jpg",
+  "https://res.cloudinary.com/diqwlgqig/image/upload/v1778616466/484793872_3237000716439972_2293245155087002638_n.jpg",
+  "https://res.cloudinary.com/diqwlgqig/image/upload/v1778616990/487819473_3250094138463963_4996779393525619235_n.jpg"
 ];
 
 const GALLERY = [
@@ -95,6 +160,67 @@ const SectionTitle = ({ children, subtitle, accent = "emerald" }: { children: Re
         {children}
       </h2>
     </div>
+  );
+};
+
+const RecognitionsSection = () => {
+  return (
+    <section className="py-32 bg-black overflow-hidden border-t border-white/5">
+      <div className="max-w-7xl mx-auto px-6">
+        <SectionTitle subtitle="Trayectoria" accent="amber">Reconocimiento Internacional</SectionTitle>
+        
+        <div className="grid lg:grid-cols-[1fr_1.5fr] gap-20 items-center">
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="space-y-8"
+          >
+            <div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-6">
+              {RECOGNITIONS.map((item, idx) => (
+                <div key={idx} className="flex items-start gap-4 group">
+                  <div className="w-10 h-10 rounded-full bg-neon-amber/10 flex items-center justify-center shrink-0 border border-neon-amber/20 group-hover:scale-110 transition-transform">
+                    <Award className="w-5 h-5 text-neon-amber" />
+                  </div>
+                  <div>
+                    <h4 className="text-white font-bold text-lg">{item.org}</h4>
+                    <p className="text-slate-400 text-sm">{item.competition}</p>
+                    <p className="text-neon-orange text-[10px] uppercase font-black tracking-widest mt-1">Obra: {item.work}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="p-8 rounded-[32px] border border-neon-orange/20 bg-neon-orange/5 mt-12 relative overflow-hidden">
+              <div className="absolute top-0 right-0 p-4 opacity-5"><Sparkles className="w-16 h-16 text-neon-orange" /></div>
+              <p className="text-xl font-display text-white font-bold italic mb-4 leading-relaxed">
+                "Tú también puedes hacerlo. Mi misión es enseñarte el camino para que tus obras también lleguen a exposiciones y concursos internacionales."
+              </p>
+              <div className="w-12 h-[2px] bg-neon-orange"></div>
+            </div>
+          </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="relative"
+          >
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              {RECOGNITION_BACKUP_IMAGES.map((url, idx) => (
+                <motion.div 
+                  key={idx}
+                  whileHover={{ scale: 1.05, zIndex: 10 }}
+                  className="aspect-square rounded-2xl overflow-hidden border border-white/10 shadow-xl"
+                >
+                  <img src={url} alt={`Respaldo ${idx}`} className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
   );
 };
 
@@ -564,6 +690,31 @@ export default function App() {
             </div>
           </div>
         </section>
+
+        {/* BRIDGE CTA */}
+        <section className="py-20 bg-black relative overflow-hidden">
+          <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">El mundo es tu bastidor.</h2>
+              <p className="text-xl text-slate-400 font-light mb-10">
+                La acuarela no tiene fronteras. Es el idioma universal que te permite capturar la esencia de cualquier lugar del mundo... empezando por tu propio hogar.
+              </p>
+              <button 
+                onClick={handlePurchase}
+                className="px-10 py-5 bg-neon-orange text-black rounded-full text-xs font-black uppercase tracking-widest shadow-[0_10px_30px_rgba(255,115,0,0.2)] hover:bg-white transition-all"
+              >
+                Quiero empezar mi viaje hoy
+              </button>
+            </motion.div>
+          </div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-radial-gradient opacity-30 pointer-events-none"></div>
+        </section>
+
+        <RecognitionsSection />
 
         {/* CIERRE CINEMATOGRÁFICO */}
         <section className="py-40 bg-black text-center relative overflow-hidden">
