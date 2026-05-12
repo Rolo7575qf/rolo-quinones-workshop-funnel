@@ -213,7 +213,7 @@ const RecognitionsSection = () => {
                   whileHover={{ scale: 1.05, zIndex: 10 }}
                   className="aspect-square rounded-2xl overflow-hidden border border-white/10 shadow-xl"
                 >
-                  <img src={url} alt={`Respaldo ${idx}`} className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
+                  <img src={url} alt={`Respaldo ${idx}`} className="w-full h-full object-cover md:grayscale md:hover:grayscale-0 transition-all duration-500" />
                 </motion.div>
               ))}
             </div>
@@ -353,6 +353,8 @@ export default function App() {
                   <video 
                     controls 
                     playsInline
+                    preload="metadata"
+                    poster="https://res.cloudinary.com/diqwlgqig/video/upload/v1778534106/VID_20260511_140707_037_bsl8381257205023838726_2.jpg"
                     className="w-full h-full object-cover"
                     src="https://res.cloudinary.com/diqwlgqig/video/upload/v1778534106/VID_20260511_140707_037_bsl8381257205023838726_2.mp4"
                     title="Rolo Quiñones"
