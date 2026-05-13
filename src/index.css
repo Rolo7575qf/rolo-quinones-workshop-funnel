@@ -5,9 +5,9 @@
   --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Space Grotesk", sans-serif;
   /* Custom Colors based on roloq.store */
-  --color-neon-orange: #FF7300;
-  --color-neon-orange-bright: #FF9100;
-  --color-neon-amber: #F59E0B;
+  --color-neon-orange: #FF9500;
+  --color-neon-orange-bright: #FFB347;
+  --color-neon-amber: #FFD600;
   --color-neon-magenta: #FF00FF;
   --color-dark-surface: #0A0A0B;
 }
@@ -31,8 +31,8 @@
   }
   
   .neon-border-emerald {
-    box-shadow: 0 0 20px rgba(255, 115, 0, 0.2), inset 0 0 1px rgba(255, 115, 0, 0.6);
-    border-color: rgba(255, 115, 0, 0.4);
+    box-shadow: 0 0 20px rgba(255, 149, 0, 0.2), inset 0 0 1px rgba(255, 149, 0, 0.6);
+    border-color: rgba(255, 149, 0, 0.4);
   }
 
   .neon-border-amber {
@@ -41,11 +41,11 @@
   }
 
   .text-glow-emerald {
-    text-shadow: 0 0 15px rgba(255, 115, 0, 0.6);
+    text-shadow: 0 0 15px rgba(255, 149, 0, 0.6);
   }
 
   .bg-radial-gradient {
-    background: radial-gradient(circle at center, rgba(255, 115, 0, 0.08) 0%, transparent 70%);
+    background: radial-gradient(circle at center, rgba(255, 149, 0, 0.08) 0%, transparent 70%);
   }
 }
 

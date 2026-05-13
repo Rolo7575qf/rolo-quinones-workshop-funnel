@@ -112,6 +112,51 @@ const GALLERY = [
   { id: 6, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1774402966/IMG_20260209_154148625_AE.jpg", title: "Cambridge" }
 ];
 
+const WORKSHOP_SESSIONS = [
+  {
+    number: 1,
+    date: "27.05",
+    title: "Volver a creer que puedo crear",
+    description: "Romperás el miedo al papel en blanco y descubrirás cómo conectar con la acuarela desde la libertad y no desde la perfección.",
+    topics: [
+      "Materiales esenciales y cómo utilizarlos",
+      "Relación entre agua y pigmento",
+      "Primeros ejercicios libres y texturas",
+      "Técnicas básicas de acuarela",
+      "Cómo desbloquear el miedo a empezar",
+      "Y sobre todo… volverás a sentir que sí eres capaz de crear."
+    ]
+  },
+  {
+    number: 2,
+    date: "28.05",
+    title: "Soltar el miedo y encontrar tu expresión",
+    description: "Explorarás el color, las formas y la expresión artística desde una mirada emocional y creativa.",
+    topics: [
+      "Ejercicios básicos de dibujo",
+      "Colores fríos y cálidos",
+      "Mezclas y atmósferas",
+      "Técnicas y texturas expresivas",
+      "Primer ejercicio urbano guiado",
+      "Descubrirás que el arte no se trata de hacerlo perfecto… sino de expresarte."
+    ]
+  },
+  {
+    number: 3,
+    date: "29.05",
+    title: "Despertar tu artista",
+    description: "Integrarás todo lo aprendido creando una obra final llena de intención, emoción y expresión personal.",
+    topics: [
+      "Composición y profundidad",
+      "Naturaleza y observación artística",
+      "Luz, atmósfera y sensibilidad visual",
+      "Ejercicio final guiado paso a paso",
+      "Cómo seguir desarrollando tu lado artístico",
+      "Y quizás lo más importante: volverás a creer en ti como artista."
+    ]
+  }
+];
+
 const FAQ = [
   {
     q: "¿Necesito tener experiencia pintando?",
@@ -131,7 +176,7 @@ const FAQ = [
   },
   {
     q: "¿Cuándo son las sesiones?",
-    a: "Nos reuniremos en vivo los días 28, 29 y 30 de mayo, de 19:30 a 21:30 (hora Chile). Las grabaciones estarán disponibles para ti durante 1 mes."
+    a: "Nos reuniremos en vivo los días 27, 28 y 29 de mayo, de 19:30 a 21:30 (hora Chile). Las grabaciones estarán disponibles para ti durante 1 mes."
   },
   {
     q: "¿Cuáles son los horarios para mi país?",
@@ -143,8 +188,8 @@ const FAQ = [
 
 const SectionTitle = ({ children, subtitle, accent = "emerald" }: { children: React.ReactNode, subtitle?: string, accent?: "emerald" | "amber" | "rose" }) => {
   const accentColors = {
-    emerald: "text-neon-orange drop-shadow-[0_0_12px_rgba(255,115,0,0.5)]",
-    amber: "text-neon-amber drop-shadow-[0_0_12px_rgba(245,158,11,0.5)]",
+    emerald: "text-neon-orange drop-shadow-[0_0_12px_rgba(255,149,0,0.5)]",
+    amber: "text-neon-amber drop-shadow-[0_0_12px_rgba(255,214,0,0.5)]",
     rose: "text-rose-500 drop-shadow-[0_0_12px_rgba(244,63,94,0.5)]"
   };
 
@@ -266,7 +311,7 @@ export default function App() {
             <a href="#programa" className="hover:text-neon-orange transition-colors">Workshop</a>
             <button 
               onClick={handlePurchase}
-              className="px-8 py-3 bg-neon-orange text-black rounded-full hover:bg-white transition-all font-black text-[9px] uppercase tracking-widest shadow-[0_0_20px_rgba(255,115,0,0.3)]"
+              className="px-8 py-3 bg-neon-orange text-black rounded-full hover:bg-white transition-all font-black text-[9px] uppercase tracking-widest shadow-[0_0_20px_rgba(255,149,0,0.3)]"
             >
               Sí, quiero atreverme
             </button>
@@ -329,13 +374,13 @@ export default function App() {
               <div className="flex flex-col gap-4 items-start">
                 <button 
                   onClick={handlePurchase}
-                  className="px-10 md:px-12 py-6 bg-neon-orange text-black rounded-full text-xs font-black uppercase tracking-widest shadow-[0_10px_40px_rgba(255,115,0,0.3)] hover:shadow-[0_20px_60px_rgba(255,115,0,0.5)] hover:bg-white hover:-translate-y-1 transition-all animate-shine"
+                  className="px-10 md:px-12 py-6 bg-neon-orange text-black rounded-full text-xs font-black uppercase tracking-widest shadow-[0_10px_40px_rgba(255,149,0,0.3)] hover:shadow-[0_20px_60px_rgba(255,149,0,0.5)] hover:bg-white hover:-translate-y-1 transition-all animate-shine"
                 >
                   Hoy decido empezar
                 </button>
                 <p className="text-[10px] text-slate-500 uppercase tracking-widest font-black mt-2">
                   <span className="inline-block w-2 h-2 rounded-full bg-neon-orange animate-pulse mr-2"></span>
-                  Inscripciones Abiertas • Iniciamos el 28 de Mayo • Solo 15 cupos
+                  Inscripciones Abiertas • Iniciamos el 27 de Mayo • Solo 15 cupos
                 </p>
               </div>
             </motion.div>
@@ -349,7 +394,7 @@ export default function App() {
               <div className="absolute inset-0 z-0 flex items-center justify-center">
                 <div className="w-[120%] h-[120%] border border-white/5 rounded-full orbit-item"></div>
               </div>
-              <div className="relative z-10 w-full max-w-sm mx-auto aspect-[9/16] rounded-[40px] overflow-hidden shadow-[0_0_50px_rgba(255,115,0,0.15)] neon-border-emerald group">
+              <div className="relative z-10 w-full max-w-sm mx-auto aspect-[9/16] rounded-[40px] overflow-hidden shadow-[0_0_50px_rgba(255,149,0,0.15)] neon-border-emerald group">
                   <video 
                     controls 
                     playsInline
@@ -439,7 +484,7 @@ export default function App() {
                   <div className="pt-8">
                     <button 
                       onClick={handlePurchase}
-                      className="px-8 py-4 bg-neon-orange text-black rounded-full text-[10px] font-black uppercase tracking-[0.3em] shadow-[0_10px_30px_rgba(255,115,0,0.2)] hover:bg-white transition-all"
+                      className="px-8 py-4 bg-neon-orange text-black rounded-full text-[10px] font-black uppercase tracking-[0.3em] shadow-[0_10px_30px_rgba(255,149,0,0.2)] hover:bg-white transition-all"
                     >
                       Quiero dar el primer paso
                     </button>
@@ -458,11 +503,62 @@ export default function App() {
         {/* PRESENTACIÓN DEL WORKSHOP */}
         <section id="programa" className="py-32 relative bg-black border-y border-white/5">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="text-center max-w-3xl mx-auto mb-20">
-              <h2 className="text-4xl md:text-6xl font-display font-bold mb-6">Esto no es un curso más.</h2>
-              <h3 className="text-2xl md:text-4xl font-display text-neon-orange">Es una experiencia de transformación.</h3>
+            <div className="text-center max-w-3xl mx-auto mb-24">
+              <h2 className="text-4xl md:text-6xl font-display font-bold mb-6">Un viaje de 3 días.</h2>
+              <h3 className="text-2xl md:text-3xl font-display text-neon-orange font-light italic">Quiero contarte exactamente lo que vamos a hacer juntos.</h3>
             </div>
             
+            {/* SESSIONS GRID */}
+            <div className="grid lg:grid-cols-3 gap-8 mb-32">
+              {WORKSHOP_SESSIONS.map((session) => (
+                <motion.div 
+                  key={session.number}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="group relative"
+                >
+                  <div className="h-full p-8 md:p-10 rounded-[40px] glass-vanguard border border-white/5 flex flex-col relative overflow-hidden transition-all duration-500 hover:border-neon-orange/30 group-hover:shadow-[0_0_50px_rgba(255,115,0,0.1)]">
+                    {/* Number and Date Header */}
+                    <div className="flex justify-between items-start mb-8">
+                      <div className="w-14 h-14 rounded-2xl bg-neon-orange/10 border border-neon-orange/20 flex items-center justify-center font-display text-2xl font-black text-neon-orange">
+                        0{session.number}
+                      </div>
+                      <div className="text-right">
+                        <p className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-500">Sesión</p>
+                        <p className="text-xl font-display font-bold text-white">{session.date}</p>
+                      </div>
+                    </div>
+
+                    <h4 className="text-2xl font-display font-bold mb-4 text-white group-hover:text-neon-orange transition-colors">
+                      {session.title}
+                    </h4>
+                    
+                    <p className="text-slate-400 text-sm font-light leading-relaxed mb-8">
+                      {session.description}
+                    </p>
+
+                    <div className="mt-auto space-y-4">
+                      <p className="text-[10px] font-black uppercase tracking-widest text-neon-orange mb-2">Aprenderás:</p>
+                      <ul className="space-y-3">
+                        {session.topics.map((topic, i) => (
+                          <li key={i} className="flex items-start gap-3 text-sm text-slate-300 font-light group-hover:text-white transition-colors">
+                            <CheckCircle2 className="w-4 h-4 text-neon-orange/50 shrink-0 mt-0.5" />
+                            <span>{topic}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Decorative Background Icon */}
+                    <div className="absolute -bottom-10 -right-10 opacity-5 transition-all duration-500 group-hover:scale-110 group-hover:opacity-10">
+                      <Palette className="w-40 h-40 text-neon-orange" />
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
             <div className="grid md:grid-cols-2 gap-16 items-start">
               <div>
                 <div className="p-10 rounded-[40px] glass-vanguard border border-white/5 shadow-2xl relative overflow-hidden">
@@ -475,7 +571,7 @@ export default function App() {
                     </div>
                     <div>
                       <h5 className="text-xl font-bold mb-2">3 Sesiones Online (vía Zoom)</h5>
-                      <p className="text-slate-400 font-light text-sm mb-2">En vivo los días 28, 29 y 30 de mayo | 19:30 a 21:30 hora Chile.</p>
+                      <p className="text-slate-400 font-light text-sm mb-2">En vivo los días 27, 28 y 29 de mayo | 19:30 a 21:30 hora Chile.</p>
                       <p className="text-slate-400 font-light text-sm italic">Pintarás paso a paso acompañado personalmente. No estarás solo.</p>
                     </div>
                   </div>
@@ -515,7 +611,7 @@ export default function App() {
                 </div>
 
                 {/* PRECIO */}
-                <div className="p-10 rounded-[40px] border border-neon-orange/30 bg-neon-orange/5 shadow-[0_0_50px_rgba(255,115,0,0.1)] text-center relative overflow-hidden">
+                <div className="p-10 rounded-[40px] border border-neon-orange/30 bg-neon-orange/5 shadow-[0_0_50px_rgba(255,149,0,0.1)] text-center relative overflow-hidden">
                   <div className="absolute -top-20 -right-20 w-40 h-40 bg-neon-orange/20 blur-[50px] rounded-full"></div>
                   <h4 className="text-xl font-display font-bold mb-2 text-white relative z-10">Esto puede acompañarte toda la vida.</h4>
                   <p className="text-xs text-neon-orange uppercase tracking-widest font-black mb-4 relative z-10 mt-6">Grabaciones disponibles por 1 mes</p>
@@ -707,7 +803,7 @@ export default function App() {
               </p>
               <button 
                 onClick={handlePurchase}
-                className="px-10 py-5 bg-neon-orange text-black rounded-full text-xs font-black uppercase tracking-widest shadow-[0_10px_30px_rgba(255,115,0,0.2)] hover:bg-white transition-all"
+                className="px-10 py-5 bg-neon-orange text-black rounded-full text-xs font-black uppercase tracking-widest shadow-[0_10px_30px_rgba(255,149,0,0.2)] hover:bg-white transition-all"
               >
                 Quiero empezar mi viaje hoy
               </button>
@@ -728,7 +824,7 @@ export default function App() {
             
             <button 
               onClick={handlePurchase}
-              className="px-14 py-7 bg-neon-orange text-black rounded-full text-sm font-black uppercase tracking-widest shadow-[0_20px_60px_rgba(255,115,0,0.3)] hover:bg-white hover:-translate-y-1 transition-all animate-shine mb-6"
+              className="px-14 py-7 bg-neon-orange text-black rounded-full text-sm font-black uppercase tracking-widest shadow-[0_20px_60px_rgba(255,149,0,0.3)] hover:bg-white hover:-translate-y-1 transition-all animate-shine mb-6"
             >
               Sí, quiero atreverme
             </button>
@@ -767,7 +863,7 @@ export default function App() {
           </div>
           <button 
             onClick={handlePurchase}
-            className="px-6 py-3 bg-neon-orange text-black rounded-full text-[10px] font-black uppercase tracking-widest shadow-[0_5px_15px_rgba(255,115,0,0.3)] hover:bg-white transition-all"
+            className="px-6 py-3 bg-neon-orange text-black rounded-full text-[10px] font-black uppercase tracking-widest shadow-[0_5px_15px_rgba(255,149,0,0.3)] hover:bg-white transition-all"
           >
             Quiero volver a crear
           </button>
