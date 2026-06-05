@@ -399,11 +399,10 @@ export default function App() {
                     controls 
                     playsInline
                     preload="metadata"
-                    poster="https://res.cloudinary.com/diqwlgqig/video/upload/v1778534106/VID_20260511_140707_037_bsl8381257205023838726_2.jpg"
                     className="w-full h-full object-cover"
-                    src="https://res.cloudinary.com/diqwlgqig/video/upload/v1778534106/VID_20260511_140707_037_bsl8381257205023838726_2.mp4"
                     title="Rolo Quiñones"
                   >
+                    <source src="https://pub-36a791f4964d4dc6a9ff465da32043ac.r2.dev/VID_20260511_140707_037_bsl8381257205023838726~2.mp4" type="video/mp4" />
                     Tu navegador no soporta la reproducción de video.
                   </video>
               </div>
