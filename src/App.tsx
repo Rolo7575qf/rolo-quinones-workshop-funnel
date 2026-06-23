@@ -462,7 +462,7 @@ export default function App() {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="order-2 lg:order-1">
                 <div className="aspect-[4/5] w-full max-w-xs mx-auto rounded-[40px] overflow-hidden border border-white/10 relative shadow-2xl">
-                  <img src="https://res.cloudinary.com/diqwlgqig/image/upload/v1778459838/Screenshot_20260503-222224.png" alt="Rolo pintando en el taller" className="w-full h-full object-cover md:grayscale md:brightness-75 md:hover:grayscale-0 md:hover:brightness-100 transition-all duration-700" />
+                  <img src="https://pub-36a791f4964d4dc6a9ff465da32043ac.r2.dev/Inicio.jpg" alt="Rolo pintando en el taller" className="w-full h-full object-cover md:grayscale md:brightness-75 md:hover:grayscale-0 md:hover:brightness-100 transition-all duration-700" />
                 </div>
                 <p className="text-center text-slate-500 text-sm italic mt-6">A veces, el primer trazo es el más difícil.</p>
               </motion.div>
