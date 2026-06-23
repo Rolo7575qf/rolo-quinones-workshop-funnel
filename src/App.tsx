@@ -37,7 +37,8 @@ const PAINTING_WORLD = [
   { id: 5, url: "https://pub-36a791f4964d4dc6a9ff465da32043ac.r2.dev/Londres.jpg", location: "Londres, UK" },
   { id: 6, url: "https://pub-36a791f4964d4dc6a9ff465da32043ac.r2.dev/Madrid.jpg", location: "Madrid, España" },
   { id: 7, url: "https://pub-36a791f4964d4dc6a9ff465da32043ac.r2.dev/Houston%20.jpg", location: "Houston, EE.UU." },
-  { id: 8, url: "https://pub-36a791f4964d4dc6a9ff465da32043ac.r2.dev/Liverpool.jpg", location: "Liverpool, UK" }
+  { id: 8, url: "https://pub-36a791f4964d4dc6a9ff465da32043ac.r2.dev/Liverpool.jpg", location: "Liverpool, UK" },
+  { id: 9, url: "https://pub-36a791f4964d4dc6a9ff465da32043ac.r2.dev/Cambrich%20(1).jpg", location: "Cambridge, UK" }
 ];
 
 const RECOGNITIONS = [
