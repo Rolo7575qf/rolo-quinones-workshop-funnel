@@ -30,16 +30,14 @@ import {
 // --- Constants & Data ---
 
 const PAINTING_WORLD = [
-  { id: 1, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1778616989/482242614_3232707150202662_62567590561808812_n.jpg", location: "Cartagena, Colombia" },
-  { id: 2, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1778616990/487506985_3252359074904136_8367232757280036633_n.jpg", location: "Ushuaia, Argentina" },
-  { id: 3, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1778616991/488427393_3255340687939308_4957167745823050649_n.jpg", location: "Toledo, España" },
-  { id: 4, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1778616991/488383035_3255348174605226_7425598840485360296_n.jpg", location: "Lisboa, Portugal" },
-  { id: 5, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1778616992/491838082_3268679929938717_1501264273516680488_n.jpg", location: "Buenos Aires, Argentina" },
-  { id: 6, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1778616993/500846661_18313080055239353_4556969707055719599_n.png", location: "Sao Paulo, Brasil" },
-  { id: 7, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1778088669/1704126059149.jpg", location: "Tierra del Fuego, Chile" },
-  { id: 8, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1778088669/Londres.jpg", location: "Londres, UK" },
-  { id: 9, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1778088669/Cambrich_1.jpg", location: "Cambridge, UK" },
-  { id: 10, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1778617677/488754438_3255434674596576_946297833519467754_n.jpg", location: "Madrid, España" }
+  { id: 1, url: "https://pub-36a791f4964d4dc6a9ff465da32043ac.r2.dev/CArtagena%202.jpg", location: "Cartagena, Colombia" },
+  { id: 2, url: "https://pub-36a791f4964d4dc6a9ff465da32043ac.r2.dev/Ushuaia%201.jpg", location: "Ushuaia, Argentina" },
+  { id: 3, url: "https://pub-36a791f4964d4dc6a9ff465da32043ac.r2.dev/1704126221112.jpg", location: "Lisboa, Portugal" },
+  { id: 4, url: "https://pub-36a791f4964d4dc6a9ff465da32043ac.r2.dev/1704126059149.jpg", location: "Caleta María, Tierra del Fuego" },
+  { id: 5, url: "https://pub-36a791f4964d4dc6a9ff465da32043ac.r2.dev/Londres.jpg", location: "Londres, UK" },
+  { id: 6, url: "https://pub-36a791f4964d4dc6a9ff465da32043ac.r2.dev/Madrid.jpg", location: "Madrid, España" },
+  { id: 7, url: "https://pub-36a791f4964d4dc6a9ff465da32043ac.r2.dev/Houston%20.jpg", location: "Houston, EE.UU." },
+  { id: 8, url: "https://pub-36a791f4964d4dc6a9ff465da32043ac.r2.dev/Liverpool.jpg", location: "Liverpool, UK" }
 ];
 
 const RECOGNITIONS = [
