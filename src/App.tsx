@@ -114,7 +114,7 @@ const GALLERY = [
 const WORKSHOP_SESSIONS = [
   {
     number: 1,
-    date: "27.05",
+    focus: "Fundamentos",
     title: "Volver a creer que puedo crear",
     description: "Romperás el miedo al papel en blanco y descubrirás cómo conectar con la acuarela desde la libertad y no desde la perfección.",
     topics: [
@@ -128,7 +128,7 @@ const WORKSHOP_SESSIONS = [
   },
   {
     number: 2,
-    date: "28.05",
+    focus: "Exploración",
     title: "Soltar el miedo y encontrar tu expresión",
     description: "Explorarás el color, las formas y la expresión artística desde una mirada emocional y creativa.",
     topics: [
@@ -142,7 +142,7 @@ const WORKSHOP_SESSIONS = [
   },
   {
     number: 3,
-    date: "29.05",
+    focus: "Creación",
     title: "Despertar tu artista",
     description: "Integrarás todo lo aprendido creando una obra final llena de intención, emoción y expresión personal.",
     topics: [
@@ -175,7 +175,7 @@ const FAQ = [
   },
   {
     q: "¿Cuándo son las sesiones?",
-    a: "Nos reuniremos en vivo los días 27, 28 y 29 de mayo, de 19:30 a 21:30 (hora Chile). Las grabaciones estarán disponibles para ti durante 1 mes."
+    a: "Nos reuniremos en vivo durante 3 sesiones consecutivas (vía Zoom), de 19:30 a 21:30 (hora Chile). Al inscribirte tendrás acceso inmediato a las fechas del próximo ciclo, y las grabaciones estarán disponibles para ti durante 1 mes."
   },
   {
     q: "¿Cuáles son los horarios para mi país?",
@@ -379,7 +379,7 @@ export default function App() {
                 </button>
                 <p className="text-[10px] text-slate-500 uppercase tracking-widest font-black mt-2">
                   <span className="inline-block w-2 h-2 rounded-full bg-neon-orange animate-pulse mr-2"></span>
-                  Inscripciones Abiertas • Iniciamos el 27 de Mayo • Solo 15 cupos
+                  Inscripciones Abiertas • Cupos Limitados • Solo 15 cupos
                 </p>
               </div>
             </motion.div>
@@ -523,8 +523,8 @@ export default function App() {
                         0{session.number}
                       </div>
                       <div className="text-right">
-                        <p className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-500">Sesión</p>
-                        <p className="text-xl font-display font-bold text-white">{session.date}</p>
+                        <p className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-500">Foco</p>
+                        <p className="text-sm font-display font-bold text-white uppercase tracking-wider">{session.focus}</p>
                       </div>
                     </div>
 
@@ -569,7 +569,7 @@ export default function App() {
                     </div>
                     <div>
                       <h5 className="text-xl font-bold mb-2">3 Sesiones Online (vía Zoom)</h5>
-                      <p className="text-slate-400 font-light text-sm mb-2">En vivo los días 27, 28 y 29 de mayo | 19:30 a 21:30 hora Chile.</p>
+                      <p className="text-slate-400 font-light text-sm mb-2">3 sesiones en vivo consecutivas | 19:30 a 21:30 hora Chile.</p>
                       <p className="text-slate-400 font-light text-sm italic">Pintarás paso a paso acompañado personalmente. No estarás solo.</p>
                     </div>
                   </div>
