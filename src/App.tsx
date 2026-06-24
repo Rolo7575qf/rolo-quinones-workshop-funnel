@@ -205,12 +205,14 @@ const SectionTitle = ({ children, subtitle, accent = "emerald" }: { children: Re
 };
 
 const RecognitionsSection = () => {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
   return (
     <section className="py-32 bg-black overflow-hidden border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6">
         <SectionTitle subtitle="Trayectoria" accent="amber">Reconocimiento Internacional</SectionTitle>
         
-        <div className="grid lg:grid-cols-[1fr_1.5fr] gap-20 items-center">
+        <div className="grid lg:grid-cols-[1fr_1.8fr] gap-16 items-center">
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -247,12 +249,13 @@ const RecognitionsSection = () => {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
               {RECOGNITION_BACKUP_IMAGES.map((url, idx) => (
                 <motion.div 
                   key={idx}
                   whileHover={{ scale: 1.05, zIndex: 10 }}
-                  className="aspect-square rounded-2xl overflow-hidden border border-white/10 shadow-xl"
+                  onClick={() => setSelectedImage(url)}
+                  className="aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 shadow-xl cursor-pointer bg-neutral-900 flex items-center justify-center"
                 >
                   <img src={url} alt={`Respaldo ${idx}`} className="w-full h-full object-cover md:grayscale md:hover:grayscale-0 transition-all duration-500" />
                 </motion.div>
@@ -261,6 +264,35 @@ const RecognitionsSection = () => {
           </motion.div>
         </div>
       </div>
+
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedImage(null)}
+            className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4 md:p-10 cursor-zoom-out"
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: "spring", damping: 25, stiffness: 200 }}
+              className="relative max-w-5xl max-h-[90vh] rounded-2xl overflow-hidden border border-white/10 bg-black"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img src={selectedImage} alt="Reconocimiento ampliado" className="max-w-full max-h-[80vh] object-contain" />
+              <button 
+                onClick={() => setSelectedImage(null)}
+                className="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/60 border border-white/10 flex items-center justify-center text-white hover:bg-black/80 transition-colors"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };
