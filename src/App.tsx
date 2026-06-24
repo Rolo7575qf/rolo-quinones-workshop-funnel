@@ -212,12 +212,12 @@ const RecognitionsSection = () => {
       <div className="max-w-7xl mx-auto px-6">
         <SectionTitle subtitle="Trayectoria" accent="amber">Reconocimiento Internacional</SectionTitle>
         
-        <div className="grid lg:grid-cols-[1fr_1.8fr] gap-16 items-center">
+        <div className="grid lg:grid-cols-[1fr_2fr] gap-16 items-start">
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="space-y-8 lg:sticky lg:top-32 lg:self-start"
           >
             <div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-6">
               {RECOGNITIONS.map((item, idx) => (
@@ -249,7 +249,7 @@ const RecognitionsSection = () => {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               {RECOGNITION_BACKUP_IMAGES.map((url, idx) => (
                 <motion.div 
                   key={idx}
