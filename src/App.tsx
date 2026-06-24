@@ -103,12 +103,15 @@ const RECOGNITION_BACKUP_IMAGES = [
 ];
 
 const GALLERY = [
-  { id: 1, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1776098579/Bajo_la_luz_de_Paris_1.jpg", title: "Bajo la Luz de París" },
-  { id: 2, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1774402985/Baja_Marea.jpg", title: "Baja Marea" },
-  { id: 3, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1774402778/IMG_20260310_161727918_AE_1_-_copia.jpg", title: "Atmósfera Urbana" },
-  { id: 4, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1774402877/Sierra_India_-_copia.jpg", title: "Sierra India" },
-  { id: 5, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1774572108/Valle_en_Inverno.jpg", title: "Valle en Invierno" },
-  { id: 6, url: "https://res.cloudinary.com/diqwlgqig/image/upload/v1774402966/IMG_20260209_154148625_AE.jpg", title: "Cambridge" }
+  { id: 1, url: "https://pub-36a791f4964d4dc6a9ff465da32043ac.r2.dev/Bajo%20la%20luz%20de%20Paris%201.jpg", title: "Bajo la Luz de París" },
+  { id: 2, url: "https://pub-36a791f4964d4dc6a9ff465da32043ac.r2.dev/Baja%20Marea.jpg", title: "Baja Marea" },
+  { id: 3, url: "https://pub-36a791f4964d4dc6a9ff465da32043ac.r2.dev/IMG_20240124_141950459_AE~2.jpg", title: "Atmósfera Urbana" },
+  { id: 4, url: "https://pub-36a791f4964d4dc6a9ff465da32043ac.r2.dev/Acuarela_%20Atardecer%20Burdeo_28%20x38%20cm_2025.jpg", title: "Atardecer Burdeo" },
+  { id: 5, url: "https://pub-36a791f4964d4dc6a9ff465da32043ac.r2.dev/Acuarela_Cesky_38x28%20cm_2025.jpg", title: "Cesky" },
+  { id: 6, url: "https://pub-36a791f4964d4dc6a9ff465da32043ac.r2.dev/Valle%20en%20Inverno.jpg", title: "Valle en Invierno" },
+  { id: 7, url: "https://pub-36a791f4964d4dc6a9ff465da32043ac.r2.dev/Valparaiso_2025_Rolando%20Qui%C3%B1ones_56%20x36cm.jpg", title: "Valparaíso" },
+  { id: 8, url: "https://pub-36a791f4964d4dc6a9ff465da32043ac.r2.dev/Grodno.jpg", title: "Grodno" },
+  { id: 9, url: "https://pub-36a791f4964d4dc6a9ff465da32043ac.r2.dev/Rouen%20_%20Francia%20.jpg", title: "Rouen, Francia" }
 ];
 
 const WORKSHOP_SESSIONS = [
