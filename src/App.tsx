@@ -92,7 +92,8 @@ const RECOGNITION_BACKUP_IMAGES = [
   "https://pub-36a791f4964d4dc6a9ff465da32043ac.r2.dev/Reconocimientos/IWS%20NFT_%20.jpg",
   "https://pub-36a791f4964d4dc6a9ff465da32043ac.r2.dev/Reconocimientos/IWS%20Turkia.jpg",
   "https://pub-36a791f4964d4dc6a9ff465da32043ac.r2.dev/Reconocimientos/IWS%20Ukrania%20.jpg",
-  "https://pub-36a791f4964d4dc6a9ff465da32043ac.r2.dev/Reconocimientos/501489520_18313062565239353_3390195419200206424_n%20(1).webp"
+  "https://pub-36a791f4964d4dc6a9ff465da32043ac.r2.dev/Reconocimientos/501489520_18313062565239353_3390195419200206424_n%20(1).webp",
+  "https://pub-36a791f4964d4dc6a9ff465da32043ac.r2.dev/Reconocimientos/IWS%20Vina%20del%20Mar.png"
 ];
 
 const GALLERY = [
