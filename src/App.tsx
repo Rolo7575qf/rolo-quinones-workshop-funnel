@@ -85,21 +85,14 @@ const RECOGNITIONS = [
 ];
 
 const RECOGNITION_BACKUP_IMAGES = [
-  "https://res.cloudinary.com/diqwlgqig/image/upload/v1778616472/588044015_18337579039239353_2357459514587362843_n.png",
-  "https://res.cloudinary.com/diqwlgqig/image/upload/v1778616471/501489520_18313062565239353_3390195419200206424_n.png",
-  "https://res.cloudinary.com/diqwlgqig/image/upload/v1778616470/493228764_3284816061658437_4926226463327908740_n.jpg",
-  "https://res.cloudinary.com/diqwlgqig/image/upload/v1778616470/490810078_3268150256658351_3225976229132619448_n.jpg",
-  "https://res.cloudinary.com/diqwlgqig/image/upload/v1778616469/490293919_3264761093663934_5898181522884028105_n.jpg",
-  "https://res.cloudinary.com/diqwlgqig/image/upload/v1778616469/490274859_3264550363685007_1903291271374342441_n.jpg",
-  "https://res.cloudinary.com/diqwlgqig/image/upload/v1778616468/489774526_3261868330619877_5809346723347168890_n.jpg",
-  "https://res.cloudinary.com/diqwlgqig/image/upload/v1778616468/489380539_3261005807372796_7536473449387445812_n.jpg",
-  "https://res.cloudinary.com/diqwlgqig/image/upload/v1778616466/488681522_3256355274504516_3377094506686811675_n.jpg",
-  "https://res.cloudinary.com/diqwlgqig/image/upload/v1778616466/487827208_3250376898435687_4863184671056929412_n.jpg",
-  "https://res.cloudinary.com/diqwlgqig/image/upload/v1778616466/487062435_3251322591674451_7656895779983952530_n.jpg",
-  "https://res.cloudinary.com/diqwlgqig/image/upload/v1778616466/486510255_3243882349085142_227779618700529908_n.jpg",
-  "https://res.cloudinary.com/diqwlgqig/image/upload/v1778616466/486603395_3244887878984589_5049718867187924332_n.jpg",
-  "https://res.cloudinary.com/diqwlgqig/image/upload/v1778616466/484793872_3237000716439972_2293245155087002638_n.jpg",
-  "https://res.cloudinary.com/diqwlgqig/image/upload/v1778616990/487819473_3250094138463963_4996779393525619235_n.jpg"
+  "https://pub-36a791f4964d4dc6a9ff465da32043ac.r2.dev/Reconocimientos/IWS%20Aban%20Institute.jpg",
+  "https://pub-36a791f4964d4dc6a9ff465da32043ac.r2.dev/Reconocimientos/IWS%20Alemania%20.jpg",
+  "https://pub-36a791f4964d4dc6a9ff465da32043ac.r2.dev/Reconocimientos/IWS%20Chile%202022.jpg",
+  "https://pub-36a791f4964d4dc6a9ff465da32043ac.r2.dev/Reconocimientos/IWS%20Ecuador.jpg",
+  "https://pub-36a791f4964d4dc6a9ff465da32043ac.r2.dev/Reconocimientos/IWS%20NFT_%20.jpg",
+  "https://pub-36a791f4964d4dc6a9ff465da32043ac.r2.dev/Reconocimientos/IWS%20Turkia.jpg",
+  "https://pub-36a791f4964d4dc6a9ff465da32043ac.r2.dev/Reconocimientos/IWS%20Ukrania%20.jpg",
+  "https://pub-36a791f4964d4dc6a9ff465da32043ac.r2.dev/Reconocimientos/501489520_18313062565239353_3390195419200206424_n%20(1).webp"
 ];
 
 const GALLERY = [
