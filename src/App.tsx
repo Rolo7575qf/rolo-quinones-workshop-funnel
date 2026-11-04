@@ -179,7 +179,7 @@ const FAQ = [
   },
   {
     q: "¿Cuáles son los horarios para mi país?",
-    a: "Las sesiones inician a las 19:30 hora Chile (25, 26 y 27 de noviembre). Horarios por país: 🇨🇱 Chile: 19:30 | 🇦🇷 Argentina: 19:30 | 🇨🇴 Colombia: 17:30 | 🇲🇽 México: 16:30."
+    a: "Las sesiones inician los días 25, 26 y 27 de noviembre: 🇨🇱 CHI 19:30 | 🇦🇷 ARG 19:30 | 🇨🇴 COL 17:30 | 🇲🇽 MEX 16:30. Si no puedes asistir en directo, tendrás acceso a las grabaciones por 1 mes."
   }
 ];
 
@@ -473,17 +473,22 @@ export default function App() {
 
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-3 border-t border-white/10">
                   <div>
-                    <p className="text-[10px] font-black uppercase tracking-wider text-slate-400 mb-1 flex items-center gap-1.5">
-                      <Clock className="w-3.5 h-3.5 text-neon-orange" /> Horarios de conexión en vivo:
-                    </p>
-                    <p className="text-xs sm:text-sm text-slate-200 font-medium">
-                      🇨🇱 Chile: <strong className="text-white">19:30</strong> &nbsp;|&nbsp; 🇦🇷 Argentina: <strong className="text-white">19:30</strong>
-                    </p>
-                    <p className="text-xs sm:text-sm text-slate-200 font-medium mt-0.5">
-                      🇨🇴 Colombia: <strong className="text-white">17:30</strong> &nbsp;|&nbsp; 🇲🇽 México: <strong className="text-white">16:30</strong>
-                    </p>
+                    <div className="flex flex-wrap gap-x-4 gap-y-1 mt-1">
+                      {[
+                        { flag: "🇨🇱", code: "CHI", time: "19:30" },
+                        { flag: "🇦🇷", code: "ARG", time: "19:30" },
+                        { flag: "🇨🇴", code: "COL", time: "17:30" },
+                        { flag: "🇲🇽", code: "MEX", time: "16:30" },
+                      ].map((c) => (
+                        <div key={c.code} className="flex items-center gap-1.5">
+                          <span className="text-base">{c.flag}</span>
+                          <span className="text-[11px] font-black text-slate-400 uppercase tracking-wider">{c.code}</span>
+                          <span className="text-sm font-black text-white">{c.time}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                  <div className="sm:self-end">
+                  <div className="sm:self-center">
                     <p className="text-[9px] uppercase tracking-widest font-black text-slate-400 mb-1.5 text-left sm:text-right">
                       El taller inicia en:
                     </p>
@@ -704,8 +709,8 @@ export default function App() {
                     </div>
                     <div>
                       <h5 className="text-xl font-bold mb-2">3 Sesiones Online en Vivo (Zoom)</h5>
-                      <p className="text-neon-orange font-bold text-sm mb-1">25, 26 y 27 de Noviembre | 19:30 hrs (Chile)</p>
-                      <p className="text-slate-400 font-light text-xs mb-2">🇦🇷 19:30 | 🇨🇴 17:30 | 🇲🇽 16:30</p>
+                      <p className="text-neon-orange font-bold text-sm mb-1">25, 26 y 27 de Noviembre</p>
+                      <p className="text-slate-300 font-medium text-xs mb-2">🇨🇱 CHI 19:30 &nbsp;|&nbsp; 🇦🇷 ARG 19:30 &nbsp;|&nbsp; 🇨🇴 COL 17:30 &nbsp;|&nbsp; 🇲🇽 MEX 16:30</p>
                       <p className="text-slate-400 font-light text-sm italic">Pintarás paso a paso acompañado personalmente. No estarás solo.</p>
                     </div>
                   </div>
@@ -757,7 +762,7 @@ export default function App() {
                   
                   {/* Horarios compactos */}
                   <p className="text-[11px] text-slate-300 font-medium mb-2 relative z-10">
-                    🇨🇱 19:30 &nbsp;|&nbsp; 🇦🇷 19:30 &nbsp;|&nbsp; 🇨🇴 17:30 &nbsp;|&nbsp; 🇲🇽 16:30
+                    🇨🇱 CHI 19:30 &nbsp;|&nbsp; 🇦🇷 ARG 19:30 &nbsp;|&nbsp; 🇨🇴 COL 17:30 &nbsp;|&nbsp; 🇲🇽 MEX 16:30
                   </p>
 
                   <div className="flex justify-center my-4 relative z-10">
