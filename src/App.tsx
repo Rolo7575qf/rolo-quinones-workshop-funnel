@@ -179,7 +179,7 @@ const FAQ = [
   },
   {
     q: "¿Cuáles son los horarios para mi país?",
-    a: "Las sesiones inician los días 25, 26 y 27 de noviembre: 🇨🇱 CHI 19:30 | 🇦🇷 ARG 19:30 | 🇨🇴 COL 17:30 | 🇲🇽 MEX 16:30. Si no puedes asistir en directo, tendrás acceso a las grabaciones por 1 mes."
+    a: "Las sesiones inician los días 25, 26 y 27 de noviembre: CHI 19:30 | ARG 19:30 | COL 17:30 | MEX 16:30. Si no puedes asistir en directo, tendrás acceso a las grabaciones por 1 mes."
   }
 ];
 
@@ -473,15 +473,14 @@ export default function App() {
 
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-3 border-t border-white/10">
                   <div>
-                    <div className="flex flex-wrap gap-x-4 gap-y-1 mt-1">
+                    <div className="flex flex-wrap items-center gap-x-5 gap-y-1.5 mt-1">
                       {[
-                        { flag: "🇨🇱", code: "CHI", time: "19:30" },
-                        { flag: "🇦🇷", code: "ARG", time: "19:30" },
-                        { flag: "🇨🇴", code: "COL", time: "17:30" },
-                        { flag: "🇲🇽", code: "MEX", time: "16:30" },
+                        { code: "CHI", time: "19:30" },
+                        { code: "ARG", time: "19:30" },
+                        { code: "COL", time: "17:30" },
+                        { code: "MEX", time: "16:30" },
                       ].map((c) => (
                         <div key={c.code} className="flex items-center gap-1.5">
-                          <span className="text-base">{c.flag}</span>
                           <span className="text-[11px] font-black text-slate-400 uppercase tracking-wider">{c.code}</span>
                           <span className="text-sm font-black text-white">{c.time}</span>
                         </div>
@@ -710,7 +709,7 @@ export default function App() {
                     <div>
                       <h5 className="text-xl font-bold mb-2">3 Sesiones Online en Vivo (Zoom)</h5>
                       <p className="text-neon-orange font-bold text-sm mb-1">25, 26 y 27 de Noviembre</p>
-                      <p className="text-slate-300 font-medium text-xs mb-2">🇨🇱 CHI 19:30 &nbsp;|&nbsp; 🇦🇷 ARG 19:30 &nbsp;|&nbsp; 🇨🇴 COL 17:30 &nbsp;|&nbsp; 🇲🇽 MEX 16:30</p>
+                      <p className="text-slate-300 font-medium text-xs mb-2">CHI 19:30 &nbsp;|&nbsp; ARG 19:30 &nbsp;|&nbsp; COL 17:30 &nbsp;|&nbsp; MEX 16:30</p>
                       <p className="text-slate-400 font-light text-sm italic">Pintarás paso a paso acompañado personalmente. No estarás solo.</p>
                     </div>
                   </div>
@@ -762,7 +761,7 @@ export default function App() {
                   
                   {/* Horarios compactos */}
                   <p className="text-[11px] text-slate-300 font-medium mb-2 relative z-10">
-                    🇨🇱 CHI 19:30 &nbsp;|&nbsp; 🇦🇷 ARG 19:30 &nbsp;|&nbsp; 🇨🇴 COL 17:30 &nbsp;|&nbsp; 🇲🇽 MEX 16:30
+                    CHI 19:30 &nbsp;|&nbsp; ARG 19:30 &nbsp;|&nbsp; COL 17:30 &nbsp;|&nbsp; MEX 16:30
                   </p>
 
                   <div className="flex justify-center my-4 relative z-10">
