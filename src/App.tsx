@@ -111,6 +111,7 @@ const GALLERY = [
 const WORKSHOP_SESSIONS = [
   {
     number: 1,
+    date: "25 Nov",
     focus: "Fundamentos",
     title: "Volver a creer que puedo crear",
     description: "Romperás el miedo al papel en blanco y descubrirás cómo conectar con la acuarela desde la libertad y no desde la perfección.",
@@ -125,6 +126,7 @@ const WORKSHOP_SESSIONS = [
   },
   {
     number: 2,
+    date: "26 Nov",
     focus: "Exploración",
     title: "Soltar el miedo y encontrar tu expresión",
     description: "Explorarás el color, las formas y la expresión artística desde una mirada emocional y creativa.",
@@ -139,6 +141,7 @@ const WORKSHOP_SESSIONS = [
   },
   {
     number: 3,
+    date: "27 Nov",
     focus: "Creación",
     title: "Despertar tu artista",
     description: "Integrarás todo lo aprendido creando una obra final llena de intención, emoción y expresión personal.",
@@ -172,15 +175,75 @@ const FAQ = [
   },
   {
     q: "¿Cuándo son las sesiones?",
-    a: "Nos reuniremos en vivo durante 3 sesiones consecutivas (vía Zoom), de 19:30 a 21:30 (hora Chile). Al inscribirte tendrás acceso inmediato a las fechas del próximo ciclo, y las grabaciones estarán disponibles para ti durante 1 mes."
+    a: "Nos reuniremos en vivo los días 25, 26 y 27 de noviembre en 3 sesiones consecutivas (vía Zoom), de 19:30 a 21:30 (hora Chile). Además, las grabaciones completas estarán disponibles para ti durante 1 mes."
   },
   {
     q: "¿Cuáles son los horarios para mi país?",
-    a: "Las sesiones inician a las 19:30 hora Chile. Aquí tienes la conversión: Argentina y Brasil (20:30), Perú y Colombia (18:30), México CDMX (17:30)."
+    a: "Las sesiones inician a las 19:30 hora Chile (25, 26 y 27 de noviembre). Horarios por país: 🇨🇱 Chile: 19:30 | 🇦🇷 Argentina: 19:30 | 🇨🇴 Colombia: 17:30 | 🇲🇽 México: 16:30."
   }
 ];
 
 // --- Subcomponents ---
+
+const WORKSHOP_TARGET_DATE = new Date("2026-11-25T19:30:00-03:00").getTime();
+
+const CountdownTimer = () => {
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0
+  });
+
+  useEffect(() => {
+    const calculateTime = () => {
+      const now = Date.now();
+      const difference = WORKSHOP_TARGET_DATE - now;
+
+      if (difference > 0) {
+        setTimeLeft({
+          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+          minutes: Math.floor((difference / 1000 / 60) % 60),
+          seconds: Math.floor((difference / 1000) % 60)
+        });
+      } else {
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+      }
+    };
+
+    calculateTime();
+    const interval = setInterval(calculateTime, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const timeBlocks = [
+    { label: "Días", value: timeLeft.days },
+    { label: "Horas", value: timeLeft.hours },
+    { label: "Min", value: timeLeft.minutes },
+    { label: "Seg", value: timeLeft.seconds }
+  ];
+
+  return (
+    <div className="flex items-center gap-2 sm:gap-3">
+      {timeBlocks.map((block, idx) => (
+        <div key={idx} className="flex items-center gap-1.5 sm:gap-2">
+          <div className="bg-black/80 border border-neon-orange/40 rounded-xl px-2.5 py-1.5 sm:px-3.5 sm:py-2 min-w-[48px] sm:min-w-[58px] text-center shadow-[0_0_15px_rgba(255,149,0,0.15)]">
+            <span className="block font-display font-black text-lg sm:text-2xl text-white leading-tight">
+              {String(block.value).padStart(2, "0")}
+            </span>
+            <span className="block text-[8px] sm:text-[9px] uppercase tracking-widest font-black text-neon-orange/80">
+              {block.label}
+            </span>
+          </div>
+          {idx < timeBlocks.length - 1 && (
+            <span className="text-neon-orange font-bold text-sm sm:text-base animate-pulse">:</span>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+};
 
 const SectionTitle = ({ children, subtitle, accent = "emerald" }: { children: React.ReactNode, subtitle?: string, accent?: "emerald" | "amber" | "rose" }) => {
   const accentColors = {
@@ -386,9 +449,47 @@ export default function App() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <div className="flex flex-wrap items-center gap-4 mb-8">
+              <div className="flex flex-wrap items-center gap-4 mb-6">
                 <span className="w-12 h-[1px] bg-neon-orange"></span>
                 <span className="text-neon-orange text-[9px] font-black uppercase tracking-[0.5em]">El Despertar del Artista</span>
+              </div>
+
+              {/* BANNER ATENCIÓN NUEVA FECHA + CUENTA REGRESIVA */}
+              <div className="mb-8 p-5 sm:p-6 rounded-3xl bg-gradient-to-r from-neon-orange/15 via-black/80 to-neon-amber/10 border border-neon-orange/30 shadow-[0_0_30px_rgba(255,149,0,0.15)] relative overflow-hidden max-w-xl">
+                <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+                  <div className="flex items-center gap-2">
+                    <span className="relative flex h-3 w-3">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-neon-orange opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-3 w-3 bg-neon-orange"></span>
+                    </span>
+                    <span className="text-[10px] sm:text-xs font-black uppercase tracking-widest text-neon-orange">
+                      ATENCIÓN: NUEVA FECHA
+                    </span>
+                  </div>
+                  <span className="text-xs sm:text-sm font-display font-bold text-white bg-white/10 px-3 py-1 rounded-full border border-white/10">
+                    25, 26 y 27 de Noviembre
+                  </span>
+                </div>
+
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-3 border-t border-white/10">
+                  <div>
+                    <p className="text-[10px] font-black uppercase tracking-wider text-slate-400 mb-1 flex items-center gap-1.5">
+                      <Clock className="w-3.5 h-3.5 text-neon-orange" /> Horarios de conexión en vivo:
+                    </p>
+                    <p className="text-xs sm:text-sm text-slate-200 font-medium">
+                      🇨🇱 Chile: <strong className="text-white">19:30</strong> &nbsp;|&nbsp; 🇦🇷 Argentina: <strong className="text-white">19:30</strong>
+                    </p>
+                    <p className="text-xs sm:text-sm text-slate-200 font-medium mt-0.5">
+                      🇨🇴 Colombia: <strong className="text-white">17:30</strong> &nbsp;|&nbsp; 🇲🇽 México: <strong className="text-white">16:30</strong>
+                    </p>
+                  </div>
+                  <div className="sm:self-end">
+                    <p className="text-[9px] uppercase tracking-widest font-black text-slate-400 mb-1.5 text-left sm:text-right">
+                      El taller inicia en:
+                    </p>
+                    <CountdownTimer />
+                  </div>
+                </div>
               </div>
               <h1 className="text-4xl md:text-6xl lg:text-[4rem] font-display font-bold tracking-tighter leading-[1.1] mb-8 text-glow-emerald">
                 ¿Y si todavía no es demasiado tarde para convertirte en artista?
@@ -548,8 +649,13 @@ export default function App() {
                   <div className="h-full p-8 md:p-10 rounded-[40px] glass-vanguard border border-white/5 flex flex-col relative overflow-hidden transition-all duration-500 hover:border-neon-orange/30 group-hover:shadow-[0_0_50px_rgba(255,115,0,0.1)]">
                     {/* Number and Date Header */}
                     <div className="flex justify-between items-start mb-8">
-                      <div className="w-14 h-14 rounded-2xl bg-neon-orange/10 border border-neon-orange/20 flex items-center justify-center font-display text-2xl font-black text-neon-orange">
-                        0{session.number}
+                      <div className="flex items-center gap-3">
+                        <div className="w-14 h-14 rounded-2xl bg-neon-orange/10 border border-neon-orange/20 flex items-center justify-center font-display text-2xl font-black text-neon-orange">
+                          0{session.number}
+                        </div>
+                        <span className="text-[11px] font-black uppercase tracking-widest text-neon-orange px-2.5 py-1 rounded-full bg-neon-orange/10 border border-neon-orange/20">
+                          {session.date}
+                        </span>
                       </div>
                       <div className="text-right">
                         <p className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-500">Foco</p>
@@ -597,8 +703,9 @@ export default function App() {
                       <Calendar className="w-5 h-5 text-neon-orange" />
                     </div>
                     <div>
-                      <h5 className="text-xl font-bold mb-2">3 Sesiones Online (vía Zoom)</h5>
-                      <p className="text-slate-400 font-light text-sm mb-2">3 sesiones en vivo consecutivas | 19:30 a 21:30 hora Chile.</p>
+                      <h5 className="text-xl font-bold mb-2">3 Sesiones Online en Vivo (Zoom)</h5>
+                      <p className="text-neon-orange font-bold text-sm mb-1">25, 26 y 27 de Noviembre | 19:30 hrs (Chile)</p>
+                      <p className="text-slate-400 font-light text-xs mb-2">🇦🇷 19:30 | 🇨🇴 17:30 | 🇲🇽 16:30</p>
                       <p className="text-slate-400 font-light text-sm italic">Pintarás paso a paso acompañado personalmente. No estarás solo.</p>
                     </div>
                   </div>
@@ -640,8 +747,24 @@ export default function App() {
                 {/* PRECIO */}
                 <div className="p-10 rounded-[40px] border border-neon-orange/30 bg-neon-orange/5 shadow-[0_0_50px_rgba(255,149,0,0.1)] text-center relative overflow-hidden">
                   <div className="absolute -top-20 -right-20 w-40 h-40 bg-neon-orange/20 blur-[50px] rounded-full"></div>
+                  
+                  {/* Badge de fecha y cuenta regresiva en precio */}
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-neon-orange/15 border border-neon-orange/30 text-neon-orange text-[10px] font-black uppercase tracking-wider mb-4 relative z-10">
+                    <Calendar className="w-3.5 h-3.5" /> 25, 26 y 27 de Noviembre
+                  </div>
+
                   <h4 className="text-xl font-display font-bold mb-2 text-white relative z-10">Esto puede acompañarte toda la vida.</h4>
-                  <p className="text-xs text-neon-orange uppercase tracking-widest font-black mb-4 relative z-10 mt-6">Grabaciones disponibles por 1 mes</p>
+                  
+                  {/* Horarios compactos */}
+                  <p className="text-[11px] text-slate-300 font-medium mb-2 relative z-10">
+                    🇨🇱 19:30 &nbsp;|&nbsp; 🇦🇷 19:30 &nbsp;|&nbsp; 🇨🇴 17:30 &nbsp;|&nbsp; 🇲🇽 16:30
+                  </p>
+
+                  <div className="flex justify-center my-4 relative z-10">
+                    <CountdownTimer />
+                  </div>
+
+                  <p className="text-xs text-neon-orange uppercase tracking-widest font-black mb-4 relative z-10 mt-2">Grabaciones disponibles por 1 mes</p>
                   <div className="flex justify-center items-baseline gap-2 mb-8 relative z-10">
                     <span className="text-xl font-display font-bold text-neon-orange/50">USD</span>
                     <span className="text-7xl font-display font-black tracking-tighter text-white">147</span>
