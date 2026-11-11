@@ -19,7 +19,6 @@ import {
   Menu,
   X,
   Play,
-  Shield,
   Video,
   Users,
   Award,
@@ -135,7 +134,7 @@ const WORKSHOP_SESSIONS = [
       "Colores fríos y cálidos",
       "Mezclas y atmósferas",
       "Técnicas y texturas expresivas",
-      "Primer ejercicio urbano guiado",
+      "Primer ejercicio urbano y de naturaleza guiada",
       "Descubrirás que el arte no se trata de hacerlo perfecto… sino de expresarte."
     ]
   },
@@ -167,7 +166,7 @@ const FAQ = [
   },
   {
     q: "¿Cómo accedo al workshop y la comunidad?",
-    a: "Al inscribirte, recibirás un enlace para unirte a nuestro grupo exclusivo de WhatsApp. Por ese medio enviaremos los enlaces de Zoom para las sesiones en vivo. Además, el acceso a nuestra comunidad exclusiva se gestionará a través de un grupo privado de Instagram."
+    a: "Al inscribirte, recibirás un enlace para unirte a nuestro grupo exclusivo de WhatsApp. Por ese medio enviaremos los enlaces de Google Meet para las sesiones en vivo. Además, el acceso a nuestra comunidad exclusiva se gestionará a través de un grupo privado de Instagram."
   },
   {
     q: "¿Las sesiones quedan grabadas?",
@@ -175,7 +174,7 @@ const FAQ = [
   },
   {
     q: "¿Cuándo son las sesiones?",
-    a: "Nos reuniremos en vivo los días 25, 26 y 27 de noviembre en 3 sesiones consecutivas (vía Zoom), de 19:30 a 21:30 (hora Chile). Además, las grabaciones completas estarán disponibles para ti durante 1 mes."
+    a: "Nos reuniremos en vivo los días 25, 26 y 27 de noviembre en 3 sesiones consecutivas (vía Google Meet), de 19:30 a 21:30 (hora Chile). Además, las grabaciones completas estarán disponibles para ti durante 1 mes."
   },
   {
     q: "¿Cuáles son los horarios para mi país?",
@@ -547,7 +546,7 @@ export default function App() {
         <section className="py-8 bg-white/[0.02] border-y border-white/5">
           <div className="max-w-7xl mx-auto px-6">
             <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-4 text-xs font-black tracking-widest uppercase text-slate-400">
-              <span className="flex items-center gap-2"><Video className="w-4 h-4 text-neon-orange"/> 3 Sesiones Online (Zoom)</span>
+              <span className="flex items-center gap-2"><Video className="w-4 h-4 text-neon-orange"/> 3 Sesiones Online (Google Meet)</span>
               <span className="flex items-center gap-2"><Users className="w-4 h-4 text-neon-orange"/> Grupo Reducido</span>
               <span className="flex items-center gap-2"><Award className="w-4 h-4 text-neon-amber"/> Curso Bonus</span>
             </div>
@@ -707,7 +706,7 @@ export default function App() {
                       <Calendar className="w-5 h-5 text-neon-orange" />
                     </div>
                     <div>
-                      <h5 className="text-xl font-bold mb-2">3 Sesiones Online en Vivo (Zoom)</h5>
+                      <h5 className="text-xl font-bold mb-2">3 Sesiones Online en Vivo (Google Meet)</h5>
                       <p className="text-neon-orange font-bold text-sm mb-1">25, 26 y 27 de Noviembre</p>
                       <p className="text-slate-300 font-medium text-xs mb-2">CHI 19:30 &nbsp;|&nbsp; ARG 19:30 &nbsp;|&nbsp; COL 17:30 &nbsp;|&nbsp; MEX 16:30</p>
                       <p className="text-slate-400 font-light text-sm italic">Pintarás paso a paso acompañado personalmente. No estarás solo.</p>
@@ -720,7 +719,7 @@ export default function App() {
                     </div>
                     <div>
                       <h5 className="text-xl font-bold mb-2">BONO 1: "Los 4 Pilares de la Acuarela"</h5>
-                      <p className="text-slate-400 font-light text-sm mb-2">Más de 40 lecciones grabadas para dominar el agua y el color.</p>
+                      <p className="text-slate-400 font-light text-sm mb-2">Curso con 40 videos de un proceso completo para iniciarse en la acuarela.</p>
                       <p className="text-xs uppercase tracking-widest font-black text-neon-amber">Valor real: 27 USD — <span className="text-white bg-white/10 px-2 py-1 rounded">Incluido GRATIS</span></p>
                     </div>
                   </div>
@@ -777,7 +776,7 @@ export default function App() {
                     onClick={handlePurchase}
                     className="w-full py-5 bg-white text-black rounded-full text-[10px] font-black uppercase tracking-widest shadow-2xl hover:bg-neon-orange transition-all relative z-10"
                   >
-                    Quiero mi lugar en el grupo pionero
+                    Quiero mi cupo en el grupo
                   </button>
                   <p className="text-[10px] text-slate-500 uppercase tracking-widest font-black mt-4 relative z-10">Pago único y seguro. <span className="text-neon-orange ml-2">Paga en tu moneda local.</span></p>
                 </div>
@@ -862,18 +861,6 @@ export default function App() {
           </div>
         </section>
 
-        {/* GARANTÍA */}
-        <section className="py-24 bg-black border-y border-white/5">
-          <div className="max-w-3xl mx-auto px-6 text-center">
-            <div className="w-16 h-16 mx-auto bg-neon-orange/10 rounded-full flex items-center justify-center mb-6">
-              <Shield className="w-8 h-8 text-neon-orange" />
-            </div>
-            <h2 className="text-3xl font-display font-bold mb-6">Garantía de Paz Mental</h2>
-            <p className="text-lg text-slate-300 font-light leading-relaxed mb-6">
-              Quiero que tomes esta decisión desde la ilusión, no desde la presión. Únete a nuestra primera sesión en vivo. Conoce el método y pinta con nosotros. Si al terminar sientes que este espacio no es lo que buscabas, te devolveré el 100% de tu inversión. Riesgo cero.
-            </p>
-          </div>
-        </section>
 
         {/* ÚLTIMAS OBRAS BANNER */}
         <section className="py-32 bg-black overflow-hidden border-t border-white/5">
